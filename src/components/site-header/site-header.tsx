@@ -2,7 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { mainNavigation } from "@/lib/navigation";
 
 export function SiteHeader() {
@@ -12,12 +12,31 @@ export function SiteHeader() {
   );
   const [activeTitle, setActiveTitle] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelMenuClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const scheduleMenuClose = () => {
+    cancelMenuClose();
+    closeTimer.current = setTimeout(() => {
+      setActiveTitle("");
+      closeTimer.current = null;
+    }, 140);
+  };
 
   useEffect(() => {
     const syncScroll = () => setScrolled(window.scrollY > 0);
     syncScroll();
     window.addEventListener("scroll", syncScroll, { passive: true });
-    return () => window.removeEventListener("scroll", syncScroll);
+    return () => {
+      window.removeEventListener("scroll", syncScroll);
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
   }, []);
   const activeGroup =
     dropdownGroups.find((group) => group.title === activeTitle) ?? dropdownGroups[0];
@@ -30,10 +49,12 @@ export function SiteHeader() {
       data-menu-open={isMenuOpen ? "true" : "false"}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
+          cancelMenuClose();
           setActiveTitle("");
         }
       }}
-      onMouseLeave={() => setActiveTitle("")}
+      onMouseEnter={cancelMenuClose}
+      onMouseLeave={scheduleMenuClose}
     >
       <div className="site-header__bar">
         <Link className="site-header__brand" href="/" aria-label="EIVIS sākums">
@@ -48,6 +69,7 @@ export function SiteHeader() {
               data-active={activeTitle === group.title ? "true" : "false"}
               key={group.title}
               onFocus={() => {
+                cancelMenuClose();
                 if (group.items?.length) {
                   setActiveTitle(group.title);
                   return;
@@ -56,6 +78,7 @@ export function SiteHeader() {
                 setActiveTitle("");
               }}
               onMouseEnter={() => {
+                cancelMenuClose();
                 if (group.items?.length) {
                   setActiveTitle(group.title);
                   return;
@@ -81,7 +104,10 @@ export function SiteHeader() {
           className="site-header__cta"
           href="/kontakti"
           onFocus={() => setActiveTitle("")}
-          onMouseEnter={() => setActiveTitle("")}
+          onMouseEnter={() => {
+            cancelMenuClose();
+            setActiveTitle("");
+          }}
         >
           Pieteikt demonstrāciju
         </Link>
@@ -90,11 +116,13 @@ export function SiteHeader() {
       <div
         className="site-header__dropdown"
         onFocus={() => {
+          cancelMenuClose();
           if (activeGroup) {
             setActiveTitle(activeGroup.title);
           }
         }}
         onMouseEnter={() => {
+          cancelMenuClose();
           if (activeGroup) {
             setActiveTitle(activeGroup.title);
           }

@@ -71,7 +71,7 @@ export function HomeHero() {
         </div>
       </div>
       <div className="home-hero__belt">
-        <p>Iestādes, kas izmanto EIVIS</p>
+        <p>EIVIS izvēlas izglītības kopiena</p>
         <ul>
           <li aria-label="Vieta iestādes logotipam"><span className="home-hero__logo-slot" /></li>
         </ul>
