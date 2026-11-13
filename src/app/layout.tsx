@@ -6,6 +6,8 @@ import "./globals.css";
 import "./_components/home-cta.css";
 import "./_components/home-hero.css";
 import "./_components/home-feature-layout.css";
+import "./_components/platform-steps.css";
+import "./_components/integrations-card.css";
 import "@/components/site-footer/site-footer.css";
 import "@/components/site-header/site-header.css";
 

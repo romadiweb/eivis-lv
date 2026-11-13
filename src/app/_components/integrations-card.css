@@ -1,0 +1,96 @@
+.integrations-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  overflow: hidden;
+  padding: 36px 24px;
+  border: 1px solid #dddde5;
+  background: #eeeef2;
+}
+
+.integrations-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 55% 6% -46%;
+  background: linear-gradient(100deg, #81abfa, #8bd5ac 32%, #e2a178 60%, #9b98de);
+  filter: blur(30px);
+  opacity: .62;
+  transition: opacity 220ms ease;
+}
+
+.integrations-card:hover::before { opacity: .9; }
+
+.integrations-card:focus-visible {
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
+}
+
+.integrations-card__tiles { display: flex; padding-left: 8px; }
+
+.integrations-card__tiles > span {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin-left: -8px;
+  border: 1px solid #ffffffa8;
+  border-radius: 15px;
+  box-shadow: 0 5px 14px #20243a24;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.integrations-card__google { background: #fff; transform: rotate(-10deg); }
+.integrations-card__google span {
+  background: linear-gradient(100deg, #2868dc 24%, #c52724 25% 45%, #986000 46% 60%, #2868dc 61% 74%, #17763c 75% 87%, #c52724 88%);
+  background-clip: text;
+  color: transparent;
+}
+.integrations-card__horizon { background: #fff; transform: rotate(4deg); }
+.integrations-card__esign { background: #fff; transform: rotate(11deg); }
+
+.integrations-card__tiles img {
+  width: 79%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.integrations-card__copy h2 {
+  margin-bottom: 7px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.integrations-card__copy > span {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid #d9d9e2;
+  border-radius: 999px;
+  background: #ffffff80;
+  font-size: 13px;
+}
+
+.integrations-card__arrow {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .integrations-card { gap: 12px; padding: 20px 38px 20px 12px; }
+  .integrations-card__tiles > span { width: 49px; height: 49px; font-size: 9px; }
+  .integrations-card__copy h2 { font-size: 16px; }
+  .integrations-card__copy > span { font-size: 11px; }
+}

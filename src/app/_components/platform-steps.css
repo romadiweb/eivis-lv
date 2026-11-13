@@ -1,0 +1,122 @@
+.platform-steps {
+  display: grid;
+  grid-template-columns: minmax(0, 390px) 1fr;
+  align-content: start;
+  gap: 48px 0;
+  min-height: 460px;
+  padding: 40px;
+}
+
+.platform-steps h2 {
+  grid-column: 1;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.platform-steps__list {
+  grid-column: 1;
+  display: grid;
+  gap: 6px;
+}
+
+.platform-steps__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.platform-steps__row button {
+  min-height: 38px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 21px;
+  font-weight: 550;
+}
+
+.platform-steps__row button:hover,
+.platform-steps__row button[aria-expanded="true"] {
+  color: var(--foreground);
+}
+
+.platform-steps__list p {
+  margin: 4px 0 8px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.platform-steps__row .platform-steps__timer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  min-height: 28px;
+  color: var(--muted);
+}
+
+.platform-steps__timer svg:last-child {
+  fill: currentColor;
+}
+
+.platform-steps__timer svg:first-child {
+  position: absolute;
+  width: 24px;
+  fill: none;
+  stroke: #2d82ff;
+  stroke-width: 2.4;
+  transform: rotate(-90deg);
+}
+
+.platform-steps__timer circle:first-child {
+  stroke: #d8dde5;
+}
+
+.platform-steps__progress {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke-linecap: round;
+}
+
+.platform-steps[data-entered="true"] .platform-steps__progress {
+  animation: platform-steps-progress 9s linear both;
+}
+
+.platform-steps__timer[data-paused="true"] .platform-steps__progress {
+  animation-play-state: paused;
+}
+
+@keyframes platform-steps-progress {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .platform-steps[data-entered="true"] {
+    animation: platform-steps-enter 760ms cubic-bezier(.22, 1, .36, 1) both;
+  }
+
+  .platform-steps__list p:not([hidden]) {
+    animation: platform-steps-enter 260ms ease-out both;
+  }
+}
+
+@keyframes platform-steps-enter {
+  from { opacity: 0; translate: 0 16px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@media (max-width: 600px) {
+  .platform-steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .platform-steps h2 { font-size: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .platform-steps__row .platform-steps__timer { display: none; }
+  .platform-steps[data-entered="true"] .platform-steps__progress { animation: none; }
+}
