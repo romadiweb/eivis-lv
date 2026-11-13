@@ -8,6 +8,8 @@ import "./_components/home-hero.css";
 import "./_components/home-feature-layout.css";
 import "./_components/platform-steps.css";
 import "./_components/integrations-card.css";
+import "./_components/update-card.css";
+import "./_components/format-wheel.css";
 import "@/components/site-footer/site-footer.css";
 import "@/components/site-header/site-header.css";
 

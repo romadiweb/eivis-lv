@@ -1,0 +1,170 @@
+/* Shallow top arc, like the Expo reference — NOT a full spinning circle. */
+.format-wheel {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 420px;
+  overflow: hidden; /* Fallback for older browsers */
+  overflow: clip; /* Does not create an internal scroll container */
+  overflow-anchor: none; /* Prevent animated tiles from affecting scroll anchoring */
+  text-align: center;
+  isolation: isolate;
+}
+
+.format-wheel .integrations-card__arrow {
+  z-index: 20;
+}
+
+.format-wheel__viewport {
+  position: relative;
+  min-height: 255px;
+  overflow: hidden;
+  overflow: clip;
+  overflow-anchor: none;
+  contain: layout paint; /* Keep all motion inside the fixed card viewport */
+  container-type: inline-size;
+}
+
+.format-wheel__track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.format-wheel__track li {
+  --tile: clamp(82px, 26cqw, 108px);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: var(--tile);
+  height: var(--tile);
+  margin-left: calc(var(--tile) / -2);
+  border-radius: 24%;
+  box-shadow: 0 9px 21px rgba(14, 17, 28, 0.11);
+  will-change: transform, opacity;
+  animation: format-wheel-pass 27s linear var(--delay) infinite;
+}
+
+.format-wheel__track li img,
+.format-wheel__track li svg {
+  display: block;
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Small stationary chevron centered BELOW the rotating row. */
+.format-wheel__viewport::after {
+  content: "";
+  position: absolute;
+  top: 204px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #b4b7c1;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.format-wheel h2 {
+  margin: 0;
+  padding: 0 12px 49px;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+/*
+ * Same shallow arc and timings as before, but ALL tiles stay the SAME size.
+ * On loop reset the tile stays offscreen and invisible; it never sweeps
+ * back across the visible carousel (which could cause an end-of-loop flash).
+ */
+@keyframes format-wheel-pass {
+  0% {
+    transform: translate3d(-69cqw, 166px, 0) rotate(-31deg);
+    opacity: 0;
+    z-index: 1;
+  }
+  12.5% {
+    transform: translate3d(-49cqw, 125px, 0) rotate(-24deg);
+    opacity: 1;
+    z-index: 2;
+  }
+  25% {
+    transform: translate3d(-26cqw, 92px, 0) rotate(-13deg);
+    opacity: 1;
+    z-index: 3;
+  }
+  37.5% {
+    transform: translate3d(0, 72px, 0) rotate(-1deg);
+    opacity: 1;
+    z-index: 5;
+  }
+  50% {
+    transform: translate3d(26cqw, 92px, 0) rotate(13deg);
+    opacity: 1;
+    z-index: 4;
+  }
+  62.5% {
+    transform: translate3d(49cqw, 125px, 0) rotate(24deg);
+    opacity: 1;
+    z-index: 2;
+  }
+  75% {
+    transform: translate3d(69cqw, 166px, 0) rotate(31deg);
+    opacity: 0;
+    z-index: 1;
+  }
+  /* Hidden at the edge throughout the reset interval. */
+  99.9% {
+    transform: translate3d(69cqw, 166px, 0) rotate(31deg);
+    opacity: 0;
+    z-index: 1;
+  }
+  100% {
+    transform: translate3d(-69cqw, 166px, 0) rotate(-31deg);
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .format-wheel { min-height: 390px; }
+  .format-wheel__viewport { min-height: 230px; }
+  .format-wheel__viewport::after { top: 192px; }
+  .format-wheel h2 { font-size: 21px; padding-bottom: 39px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .format-wheel__track {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    padding-top: 85px;
+  }
+  .format-wheel__track li {
+    position: static;
+    flex: 0 0 17%;
+    width: 17%;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+  .format-wheel__track li:nth-child(n + 6) { display: none; }
+}
