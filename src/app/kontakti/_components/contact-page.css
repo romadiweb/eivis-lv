@@ -5,7 +5,10 @@
 .contact-page__hero {
   display: grid;
   justify-items: center;
-  padding: clamp(64px, 8vw, 112px) 20px clamp(64px, 8vw, 96px);
+  width: min(1280px, calc(100% - 48px));
+  margin-inline: auto;
+  padding: clamp(72px, 9vw, 132px) 20px clamp(64px, 7vw, 96px);
+  border-bottom: 1px solid #d4d4d8;
   text-align: center;
 }
 
@@ -48,7 +51,7 @@
   align-items: center;
   min-height: 44px;
   padding: 0 20px;
-  border-radius: 999px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
 }
@@ -67,7 +70,6 @@
   width: min(1280px, calc(100% - 48px));
   margin-inline: auto;
   padding-block: clamp(48px, 7vw, 88px);
-  border-top: 1px solid #d4d4d8;
   scroll-margin-top: 80px;
 }
 

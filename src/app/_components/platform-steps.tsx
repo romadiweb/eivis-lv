@@ -63,11 +63,10 @@ export function PlatformSteps() {
                 {title}
               </button>
               {active === index && (
-                <button type="button" className="platform-steps__timer" data-paused={paused} aria-label={paused ? "Turpināt automātisko pārslēgšanu" : "Pauzēt automātisko pārslēgšanu"} onClick={() => setPaused(!paused)}>
+                <button type="button" className="platform-steps__timer" data-paused={paused} aria-label={paused ? "Turpināt automātisko pārslēgšanu" : "Pauzēt automātisko pārslēgšanu"} onClick={() => setPaused((current) => !current)}>
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="10" />
                     <circle
-                      key={paused ? "still" : "playing"}
                       className="platform-steps__progress"
                       style={illustration === "izvelies" ? { animationDuration: "12.8s" } : undefined}
                       cx="12"
