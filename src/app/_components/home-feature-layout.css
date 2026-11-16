@@ -9,6 +9,17 @@
   background: #f9f9fb;
 }
 
+a.home-feature-layout__block {
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: outline-color 180ms ease;
+}
+
+a.home-feature-layout__block:hover,
+a.home-feature-layout__block:focus-visible {
+  outline-color: #999999;
+}
+
 .home-feature-layout__wide {
   aspect-ratio: 2.2;
   min-height: 180px;
