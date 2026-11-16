@@ -1,42 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="825" height="465" viewBox="105 75 825 465" fill="none" role="img" aria-label="Pielāgo — piekļuves un moduļu konfigurēšana">
-<title>Pielāgo — piekļuves un moduļu konfigurēšana</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="200 110 600 380" fill="none" role="img" aria-labelledby="title description">
+<title id="title">Pielāgo — custom architecture</title>
+<desc id="description">A thin, stationary blueprint frame gradually receives precisely fitted geometric components. New shapes appear one by one, forming a tailored composition, then gently disappear in reverse order.</desc>
 <defs>
-<filter id="softshadow" x="-35%" y="-35%" width="170%" height="190%"><feDropShadow dx="0" dy="14" stdDeviation="19" flood-color="#405575" flood-opacity=".105"/></filter>
-<filter id="tinyshadow" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#405575" flood-opacity=".13"/></filter>
-<linearGradient id="frontleft" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#F6F7FA"/><stop offset="1" stop-color="#D9DEE6"/></linearGradient>
-<linearGradient id="frontright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C9D2E0"/><stop offset="1" stop-color="#A9B5C6"/></linearGradient>
-<linearGradient id="blueleft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#498BDF"/><stop offset="1" stop-color="#2169C5"/></linearGradient>
-<linearGradient id="blueright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CCE4FF"/><stop offset="1" stop-color="#9AC7F7"/></linearGradient>
-<linearGradient id="topface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#F1F4F8"/></linearGradient>
+  <linearGradient id="paper" x1=".04" y1=".05" x2=".95" y2="1">
+    <stop offset="0" stop-color="#FCFEFF" stop-opacity=".96"/>
+    <stop offset="1" stop-color="#F3F8FE" stop-opacity=".60"/>
+  </linearGradient>
+  <linearGradient id="blueWash" x1=".03" y1=".04" x2="1" y2="1">
+    <stop offset="0" stop-color="#D7E9FF" stop-opacity=".83"/>
+    <stop offset=".58" stop-color="#B6D7FA" stop-opacity=".62"/>
+    <stop offset="1" stop-color="#EAF4FF" stop-opacity=".55"/>
+  </linearGradient>
+  <linearGradient id="paleWash" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F9FCFF" stop-opacity=".92"/>
+    <stop offset="1" stop-color="#E9F4FF" stop-opacity=".69"/>
+  </linearGradient>
+  <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#A4BED9"/>
+    <stop offset="1" stop-color="#D5E1EF"/>
+  </linearGradient>
+  <style>
+    .fine {stroke:#D9E4EF;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+    .fine2 {stroke:#E4ECF5;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+    .dash {stroke:#CBD9E8;stroke-width:1.2;stroke-dasharray:4 7;stroke-linejoin:round}
+    .active {stroke:#6C9AD2;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+    .part{transform-box:view-box;animation-duration:8.6s;animation-iteration-count:infinite;animation-timing-function:linear;will-change:opacity,transform}
+    .part-a{animation-name:partA}
+    .part-b{animation-name:partB}
+    .part-c{animation-name:partC}
+    .part-d{animation-name:partD}
+    @keyframes partA{
+       0%,7% {opacity:0;transform:translateY(-9px)}
+       17%,92% {opacity:1;transform:translateY(0)}
+       99%,100% {opacity:0;transform:translateY(-9px)}
+    }
+    @keyframes partB{
+       0%,21% {opacity:0;transform:translateY(-9px)}
+       31%,86% {opacity:1;transform:translateY(0)}
+       94%,100% {opacity:0;transform:translateY(-9px)}
+    }
+    @keyframes partC{
+       0%,35% {opacity:0;transform:translateY(-9px)}
+       45%,80% {opacity:1;transform:translateY(0)}
+       88%,100% {opacity:0;transform:translateY(-9px)}
+    }
+    @keyframes partD{
+       0%,49% {opacity:0;transform:translateY(-9px)}
+       59%,74% {opacity:1;transform:translateY(0)}
+       82%,100% {opacity:0;transform:translateY(-9px)}
+    }
+    @media (prefers-reduced-motion:reduce){.part{animation:none!important;opacity:1!important;transform:none!important}}
+  </style>
 </defs>
-<style>
-svg { overflow:visible; shape-rendering:geometricPrecision; }
-* { vector-effect:non-scaling-stroke; }
-</style>
-<!-- Stationary cards -->
-<g filter="url(#tinyshadow)"><rect x="140" y="106" width="118" height="106" rx="25" fill="#FFFFFF" stroke="#C5CEDB" stroke-width="2"/></g>
-<g filter="url(#tinyshadow)"><rect x="300" y="106" width="118" height="106" rx="25" fill="#FFFFFF" stroke="#C5CEDB" stroke-width="2"/></g>
-<g filter="url(#tinyshadow)"><rect x="460" y="106" width="118" height="106" rx="25" fill="#FFFFFF" stroke="#C5CEDB" stroke-width="2"/></g>
-<g filter="url(#tinyshadow)"><rect x="620" y="106" width="118" height="106" rx="25" fill="#FFFFFF" stroke="#C5CEDB" stroke-width="2"/></g>
-<g filter="url(#tinyshadow)"><rect x="780" y="106" width="118" height="106" rx="25" fill="#FFFFFF" stroke="#C5CEDB" stroke-width="2"/></g>
-<g opacity="0"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.89;.94;1" />
-<path d="M199 214 Q 199 294 500 385" fill="none" stroke="#4B8DE1" stroke-width="3.5" stroke-linecap="round" opacity=".82">
-<animate attributeName="d" dur="6s" repeatCount="indefinite" values="M199 214 Q 199 294 500 385 ; M199 214 Q 199 294 500 385 ; M359 214 Q 359 294 500 385 ; M359 214 Q 359 294 500 385 ; M519 214 Q 519 294 500 385 ; M519 214 Q 519 294 500 385 ; M679 214 Q 679 294 500 385 ; M679 214 Q 679 294 500 385 ; M839 214 Q 839 294 500 385 ; M839 214 Q 839 294 500 385 ; M199 214 Q 199 294 500 385 ; M199 214 Q 199 294 500 385" keyTimes="0;.11;.20;.31;.40;.51;.60;.71;.80;.91;.955;1" calcMode="spline" keySplines="0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1"/>
-</path>
-<rect x="140" y="106" width="118" height="106" rx="25" fill="#DCEBFF" fill-opacity=".65" stroke="#2F7AD7" stroke-width="3.5" filter="url(#tinyshadow)">
-<animate attributeName="x" dur="6s" repeatCount="indefinite" values="140;140;300;300;460;460;620;620;780;780;140;140" keyTimes="0;.11;.20;.31;.40;.51;.60;.71;.80;.91;.955;1" calcMode="spline" keySplines="0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1;.22 0 .22 1;0 0 1 1"/>
-</rect>
+
+<!-- Outer architectural register, stationary -->
+<path d="M226 206v-23q0-9 9-9h24 M741 174h24q9 0 9 9v23 M226 394v23q0 9 9 9h24 M741 426h24q9 0 9-9v-23" class="fine"/>
+<circle cx="226" cy="300" r="3" fill="#E2EAF3"/>
+<circle cx="774" cy="300" r="3" fill="#E2EAF3"/>
+<path d="M226 300h24 M750 300h24" class="fine"/>
+<path d="M500 146v17 M500 437v17" class="fine"/>
+<circle cx="500" cy="146" r="2.5" fill="#C8D8E7"/>
+<circle cx="500" cy="454" r="2.5" fill="#C8D8E7"/>
+
+<!-- Single fixed design surface, no 3D rotation, thick glass or bouncing -->
+<rect x="258" y="168" width="484" height="270" rx="32" fill="url(#paper)" stroke="#BDCCDD" stroke-width="1.5"/>
+<path d="M260 438v6q0 9 9 9h462q9 0 9-9v-6" fill="none" stroke="#DFE7F0" stroke-width="1.15"/>
+<rect x="273" y="183" width="454" height="240" rx="23" fill="none" stroke="#E5EDF4" stroke-width="1"/>
+
+<!-- Static layout blueprint: a unique tailored arrangement -->
+<rect x="293" y="214" width="126" height="180" rx="19" fill="#F8FBFF" fill-opacity=".27" class="dash"/>
+<rect x="435" y="214" width="272" height="74" rx="19" fill="#F8FBFF" fill-opacity=".27" class="dash"/>
+<rect x="435" y="305" width="127" height="89" rx="19" fill="#F8FBFF" fill-opacity=".27" class="dash"/>
+<rect x="579" y="305" width="128" height="89" rx="19" fill="#F8FBFF" fill-opacity=".27" class="dash"/>
+
+<!-- Subtle alignment lines deliberately connect only the planned placements -->
+<g opacity=".83">
+  <path d="M283 204h16 M419 204h16 M707 204h16 M283 404h16 M419 404h16 M707 404h16" class="fine"/>
+  <path d="M426 221v62 M426 318v69 M571 317v71" class="fine2" stroke-dasharray="2 7"/>
+  <path d="M310 200v-9 M400 200v-9 M451 200v-9 M691 200v-9" class="fine2"/>
 </g>
-<g transform="translate(199 159) scale(1)" fill="none" stroke="#37465C" stroke-width="3.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-15 -23h22l12 12v35h-34z"/><path d="M7 -23v12h12"/><path d="M-7 1h18M-7 10h18"/></g>
-<g transform="translate(359 159) scale(1)" fill="none" stroke="#37465C" stroke-width="3.7" stroke-linejoin="round" stroke-linecap="round"><rect x="-24" y="-19" width="48" height="43" rx="7"/><path d="M-24 -6h48M-11 -25v12M11 -25v12"/><path d="M-10 5h6M4 5h6M-10 15h6"/></g>
-<g transform="translate(519 159) scale(1)" fill="none" stroke="#37465C" stroke-width="3.7" stroke-linejoin="round" stroke-linecap="round"><circle cx="-8" cy="-10" r="9"/><circle cx="15" cy="-6" r="7"/><path d="M-26 22v-4q0-13 17-13t18 13v4M9 10q20-4 20 14"/></g>
-<g transform="translate(679 159) scale(1)" fill="none" stroke="#37465C" stroke-width="3.7" stroke-linejoin="round" stroke-linecap="round"><rect x="-25" y="-19" width="50" height="36" rx="5"/><path d="M0 17v10M-12 27h24"/></g>
-<g transform="translate(839 159) scale(1)" fill="none" stroke="#37465C" stroke-width="3.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-8 -18h29M-8 -2h29M-8 14h29"/><path d="m-25 -18 5 5 7-8m-12 19 5 5 7-8m-12 19 5 5 7-8"/></g>
-<!-- Fixed main module cube -->
-<g filter="url(#tinyshadow)" stroke="#68758A" stroke-width="2" stroke-linejoin="round">
-<path d="M500 332 L596 380.0 L500 428.0 L404 380.0 Z" fill="url(#topface)"/>
-<path d="M404 380.0 L500 428.0 L500 502.88 L404 454.88 Z" fill="url(#frontleft)"/>
-<path d="M500 428.0 L596 380.0 L596 454.88 L500 502.88 Z" fill="url(#frontright)"/>
+
+<!-- PART A : main tall tailored region -->
+<g class="part part-a">
+  <rect x="293" y="214" width="126" height="180" rx="19" fill="url(#blueWash)" stroke="#7EABE0" stroke-width="1.55"/>
+  <rect x="307" y="228" width="98" height="152" rx="12" fill="none" stroke="#A5C7EB" stroke-width="1.0"/>
+  <path d="M318 259h58 M318 269h38" stroke="#82ACDD" stroke-width="1.25" stroke-linecap="round" opacity=".86"/>
+  <path d="M318 335h78 M318 346h78 M318 357h48" stroke="#AAC8E8" stroke-width="1.1" stroke-linecap="round"/>
+  <circle cx="383" cy="247" r="5.2" fill="#F6FAFF" stroke="#85B0E1" stroke-width="1.1"/>
 </g>
-<circle cx="500" cy="394" r="8" fill="#5A9AEC" stroke="white" stroke-width="2"/>
+
+<!-- PART B : wide horizontal content region -->
+<g class="part part-b">
+  <rect x="435" y="214" width="272" height="74" rx="19" fill="url(#paleWash)" stroke="#91B6DF" stroke-width="1.55"/>
+  <path d="M453 238h103 M453 248h72" stroke="#A9C8E8" stroke-width="1.2" stroke-linecap="round"/>
+  <rect x="639" y="230" width="49" height="40" rx="11" fill="#DDEEFF" fill-opacity=".61" stroke="#B1D0EF" stroke-width="1.05"/>
+  <path d="M648 258l9-9 8 5 11-13" stroke="#7FAAE0" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="676" cy="241" r="2.3" fill="#679CD9"/>
+</g>
+
+<!-- PART C : compact modular region -->
+<g class="part part-c">
+  <rect x="435" y="305" width="127" height="89" rx="19" fill="#F9FCFF" fill-opacity=".95" stroke="#B2C8DE" stroke-width="1.4"/>
+  <rect x="453" y="324" width="39" height="36" rx="10" fill="#E6F1FF" stroke="#BAD4F2" stroke-width="1.0"/>
+  <path d="M462 341h21 M472.5 331v20" stroke="#83AEE0" stroke-width="1.18" stroke-linecap="round"/>
+  <path d="M503 334h41 M503 345h32 M453 376h90" stroke="#BDD1E5" stroke-width="1.18" stroke-linecap="round"/>
+</g>
+
+<!-- PART D : another, differently shaped configuration component -->
+<g class="part part-d">
+  <rect x="579" y="305" width="128" height="89" rx="19" fill="url(#blueWash)" fill-opacity=".82" stroke="#87B2E1" stroke-width="1.45"/>
+  <path d="M596 368h93" stroke="#C7DAEF" stroke-width="1.1" stroke-linecap="round"/>
+  <path d="M602 351l18-11 15 5 17-20 17 11 19-13" stroke="#679AD9" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="688" cy="323" r="3.1" fill="#EAF4FF" stroke="#6397D2" stroke-width="1.1"/>
+</g>
+
+<!-- Four tiny fixed blueprint corners: provide scale without labels -->
+<path d="M273 205h7 M280 198v7 M720 198v7 M720 205h7 M273 403h7 M280 403v7 M720 403v7 M720 403h7" stroke="#DBE6F1" stroke-width="1.15" stroke-linecap="round"/>
 </svg>

@@ -13,10 +13,26 @@ const steps = [
 
 const illustrations = ["izvelies", "savieno", "pielago", "paplasini"];
 
+function setSvgPaused(element: HTMLObjectElement | null, paused: boolean) {
+  const document = element?.contentDocument;
+  const root = document?.querySelector("svg") as SVGSVGElement | null;
+  if (!document || !root) return;
+
+  if (paused) {
+    if (typeof root.pauseAnimations === "function") root.pauseAnimations();
+    document.getAnimations().forEach((animation) => animation.pause());
+    return;
+  }
+
+  if (typeof root.unpauseAnimations === "function") root.unpauseAnimations();
+  document.getAnimations().forEach((animation) => animation.play());
+}
+
 export function PlatformSteps() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const section = useRef<HTMLElement>(null);
+  const visual = useRef<HTMLObjectElement>(null);
   const [entered, setEntered] = useState(false);
   const [inView, setInView] = useState(false);
   const illustration = illustrations[active];
@@ -31,6 +47,10 @@ export function PlatformSteps() {
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    setSvgPaused(visual.current, paused);
+  }, [illustration, paused]);
 
   return (
     <section ref={section} data-entered={entered} data-in-view={inView} className="home-feature-layout__block platform-steps" aria-labelledby="platform-steps-title">
@@ -65,12 +85,22 @@ export function PlatformSteps() {
           </li>
         ))}
       </ul>
-      <picture key={illustration} className="platform-steps__visual" data-illustration={illustration}>
-        {inView && !paused && (
-          <source media="(prefers-reduced-motion: no-preference)" srcSet={`/${illustration}.svg`} />
+      <div key={illustration} className="platform-steps__visual" data-illustration={illustration}>
+        {inView ? (
+          <object
+            ref={visual}
+            data={`/${illustration}.svg`}
+            type="image/svg+xml"
+            aria-hidden="true"
+            tabIndex={-1}
+            onLoad={() => setSvgPaused(visual.current, paused)}
+          >
+            <Image src={`/${illustration}-still.svg`} alt="" width={825} height={465} unoptimized />
+          </object>
+        ) : (
+          <Image src={`/${illustration}-still.svg`} alt="" width={825} height={465} unoptimized />
         )}
-        <Image src={`/${illustration}-still.svg`} alt="" width={825} height={465} unoptimized />
-      </picture>
+      </div>
     </section>
   );
 }
