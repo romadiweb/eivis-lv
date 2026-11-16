@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="825" height="465" viewBox="45 55 905 510" fill="none" role="img" aria-label="Paplašini — jauna moduļa pievienošana">
+<title>Paplašini — jauna moduļa pievienošana</title>
+<defs>
+<filter id="softshadow" x="-35%" y="-35%" width="170%" height="190%"><feDropShadow dx="0" dy="14" stdDeviation="19" flood-color="#405575" flood-opacity=".105"/></filter>
+<filter id="tinyshadow" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#405575" flood-opacity=".13"/></filter>
+<linearGradient id="frontleft" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#F6F7FA"/><stop offset="1" stop-color="#D9DEE6"/></linearGradient>
+<linearGradient id="frontright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C9D2E0"/><stop offset="1" stop-color="#A9B5C6"/></linearGradient>
+<linearGradient id="blueleft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#498BDF"/><stop offset="1" stop-color="#2169C5"/></linearGradient>
+<linearGradient id="blueright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CCE4FF"/><stop offset="1" stop-color="#9AC7F7"/></linearGradient>
+<linearGradient id="topface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#F1F4F8"/></linearGradient>
+</defs>
+<style>
+svg { overflow:visible; shape-rendering:geometricPrecision; }
+* { vector-effect:non-scaling-stroke; }
+</style>
+<!-- New expansion wing appears from behind the original interface. No network diagram. -->
+<g opacity="0">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.10;.20;.81;.91;1"/>
+  <g transform="translate(-156 0)">
+    <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="-156 0;-156 0;0 0;0 0;-156 0;-156 0" keyTimes="0;.17;.38;.82;.91;1" calcMode="spline" keySplines="0 0 1 1;.2 0 .18 1;0 0 1 1;0 0 1 1;0 0 1 1" />
+    <g filter="url(#softshadow)">
+      <rect x="630" y="171" width="264" height="223" rx="28" fill="#F9FBFE" stroke="#BFCBDA" stroke-width="2.6"/>
+      <rect x="651" y="191" width="222" height="32" rx="12" fill="#EFF3F9"/>
+      <rect x="666" y="202" width="84" height="9" rx="4.5" fill="#D3DBE8"/>
+      <rect x="667" y="241" width="205" height="130" rx="18" fill="#EAF3FF" stroke="#6B9FE5" stroke-width="2.2" stroke-dasharray="7 8"/>
+    </g>
+  </g>
+</g>
+<!-- Existing modular workspace is fixed for the entire loop. -->
+<g filter="url(#softshadow)" transform="rotate(-5 390 300)">
+ <rect x="100" y="109" width="574" height="390" rx="29" fill="#FAFBFD" stroke="#C8D0DC" stroke-width="2.4"/>
+ <rect x="118" y="125" width="538" height="62" rx="19" fill="#F1F4F8"/>
+ <circle cx="147" cy="155" r="5.7" fill="#BEC8D4"/><circle cx="169" cy="155" r="5.7" fill="#BEC8D4"/><circle cx="191" cy="155" r="5.7" fill="#BEC8D4"/>
+ <rect x="220" y="149" width="146" height="11" rx="5.5" fill="#D1D9E4"/>
+ <g filter="url(#tinyshadow)">
+  <rect x="137" y="210" width="239" height="115" rx="19" fill="#FFFFFF" stroke="#BCC8D7" stroke-width="2"/>
+  <rect x="402" y="210" width="231" height="115" rx="19" fill="#FFFFFF" stroke="#BCC8D7" stroke-width="2"/>
+  <rect x="137" y="345" width="239" height="115" rx="19" fill="#FFFFFF" stroke="#BCC8D7" stroke-width="2"/>
+  <rect x="402" y="345" width="231" height="115" rx="19" fill="#FFFFFF" stroke="#BCC8D7" stroke-width="2"/>
+ </g>
+ <g stroke="#68758A" stroke-width="2.2" stroke-linejoin="round">
+  <g transform="translate(255 245) scale(.65)">
+   <path d="M0 0 L40 20 L0 40 L-40 20Z" fill="#DFEDFF"/><path d="M-40 20 L0 40 L0 71 L-40 51Z" fill="url(#blueleft)"/><path d="M0 40 L40 20 L40 51 L0 71Z" fill="url(#blueright)"/>
+  </g>
+  <g transform="translate(517 245) scale(.65)">
+   <path d="M0 0 L40 20 L0 40 L-40 20Z" fill="#DFEDFF"/><path d="M-40 20 L0 40 L0 71 L-40 51Z" fill="url(#blueleft)"/><path d="M0 40 L40 20 L40 51 L0 71Z" fill="url(#blueright)"/>
+  </g>
+  <g transform="translate(255 381) scale(.65)">
+   <path d="M0 0 L40 20 L0 40 L-40 20Z" fill="#DFEDFF"/><path d="M-40 20 L0 40 L0 71 L-40 51Z" fill="url(#blueleft)"/><path d="M0 40 L40 20 L40 51 L0 71Z" fill="url(#blueright)"/>
+  </g>
+  <g transform="translate(517 381) scale(.65)">
+   <path d="M0 0 L40 20 L0 40 L-40 20Z" fill="#DFEDFF"/><path d="M-40 20 L0 40 L0 71 L-40 51Z" fill="url(#blueleft)"/><path d="M0 40 L40 20 L40 51 L0 71Z" fill="url(#blueright)"/>
+  </g>
+ </g>
+ <g fill="#CAD4E1">
+  <rect x="222" y="304" width="68" height="5" rx="2.5"/>
+  <rect x="483" y="304" width="68" height="5" rx="2.5"/>
+  <rect x="222" y="439" width="68" height="5" rx="2.5"/>
+  <rect x="483" y="439" width="68" height="5" rx="2.5"/>
+ </g>
+</g>
+<!-- Incoming component docks inside the extra column, instead of linking to network nodes. -->
+<g opacity="0">
+ <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.28;.39;.81;.91;1"/>
+ <g transform="translate(0 116)">
+   <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 116;0 116;0 0;0 0;0 116;0 116" keyTimes="0;.37;.57;.83;.92;1" calcMode="spline" keySplines="0 0 1 1;.23 0 .18 1;0 0 1 1;0 0 1 1;0 0 1 1"/>
+   <rect x="674" y="248" width="190" height="116" rx="16" fill="#FFFFFF" stroke="#6986B0" stroke-width="2.4" filter="url(#tinyshadow)"/>
+   <rect x="685" y="260" width="168" height="91" rx="10" fill="#F7FAFF" stroke="#E4EAF3" stroke-width="1.2"/>
+   <g transform="translate(767 273) scale(.78)" stroke="#68758A" stroke-width="2.2" stroke-linejoin="round">
+    <path d="M0 0 L41 20.5 L0 41 L-41 20.5Z" fill="#DFEDFF"/>
+    <path d="M-41 20.5 L0 41 L0 71.34 L-41 50.84Z" fill="url(#blueleft)"/>
+    <path d="M0 41 L41 20.5 L41 50.84 L0 71.34Z" fill="url(#blueright)"/>
+   </g>
+   <rect x="734" y="341" width="66" height="5" rx="2.5" fill="#B9C7D9"/>
+ </g>
+</g>
+<!-- Soft confirmation only after the new tile is seated. -->
+<g opacity="0">
+ <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.57;.63;.81;.88;1"/>
+ <circle cx="854" cy="259" r="19" fill="#347BD5" stroke="#FFFFFF" stroke-width="3.5"/>
+ <path d="m847 258 5 5 10-11" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

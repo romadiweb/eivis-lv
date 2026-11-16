@@ -1,9 +1,9 @@
 .platform-steps {
   display: grid;
-  grid-template-columns: minmax(0, 390px) 1fr;
-  align-content: start;
-  gap: 48px 0;
-  min-height: 460px;
+  grid-template-columns: min(65%, 390px) minmax(0, 1fr);
+  grid-template-rows: min-content 1fr;
+  gap: 48px clamp(24px, 5vw, 64px);
+  min-height: clamp(460px, 45vw, 580px);
   padding: 40px;
 }
 
@@ -16,8 +16,25 @@
 
 .platform-steps__list {
   grid-column: 1;
+  align-self: start;
   display: grid;
   gap: 6px;
+}
+
+.platform-steps__visual {
+  grid-area: 1 / 2 / span 2;
+  place-self: center;
+  width: min(470px, 100%);
+  aspect-ratio: 47 / 50;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.platform-steps__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .platform-steps__row {
@@ -78,8 +95,8 @@
   stroke-linecap: round;
 }
 
-.platform-steps[data-entered="true"] .platform-steps__progress {
-  animation: platform-steps-progress 9s linear both;
+.platform-steps[data-in-view="true"] .platform-steps__progress {
+  animation: platform-steps-progress 12s linear both;
 }
 
 .platform-steps__timer[data-paused="true"] .platform-steps__progress {
@@ -92,6 +109,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .platform-steps__visual {
+    animation: platform-steps-visual-fade 240ms ease-out;
+  }
+
   .platform-steps[data-entered="true"] {
     animation: platform-steps-enter 760ms cubic-bezier(.22, 1, .36, 1) both;
   }
@@ -99,6 +120,11 @@
   .platform-steps__list p:not([hidden]) {
     animation: platform-steps-enter 260ms ease-out both;
   }
+}
+
+@keyframes platform-steps-visual-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes platform-steps-enter {
@@ -109,14 +135,21 @@
 @media (max-width: 600px) {
   .platform-steps {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+    align-content: start;
     gap: 24px;
     padding: 24px;
   }
 
   .platform-steps h2 { font-size: 28px; }
+
+  .platform-steps__visual {
+    grid-area: auto;
+    width: min(310px, 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .platform-steps__row .platform-steps__timer { display: none; }
-  .platform-steps[data-entered="true"] .platform-steps__progress { animation: none; }
+  .platform-steps[data-in-view="true"] .platform-steps__progress { animation: none; }
 }

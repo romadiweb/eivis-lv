@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="825" height="465" viewBox="105 75 825 465" fill="none" role="img" aria-label="Savieno — moduļu savstarpēja datu apmaiņa">
+<title>Savieno — moduļu savstarpēja datu apmaiņa</title>
+<defs>
+<filter id="softshadow" x="-35%" y="-35%" width="170%" height="190%"><feDropShadow dx="0" dy="14" stdDeviation="19" flood-color="#405575" flood-opacity=".105"/></filter>
+<filter id="tinyshadow" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#405575" flood-opacity=".13"/></filter>
+<linearGradient id="frontleft" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#F6F7FA"/><stop offset="1" stop-color="#D9DEE6"/></linearGradient>
+<linearGradient id="frontright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C9D2E0"/><stop offset="1" stop-color="#A9B5C6"/></linearGradient>
+<linearGradient id="blueleft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#498BDF"/><stop offset="1" stop-color="#2169C5"/></linearGradient>
+<linearGradient id="blueright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CCE4FF"/><stop offset="1" stop-color="#9AC7F7"/></linearGradient>
+<linearGradient id="topface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#F1F4F8"/></linearGradient>
+</defs>
+<style>
+svg { overflow:hidden; shape-rendering:geometricPrecision; }
+* { vector-effect:non-scaling-stroke; }
+</style>
+<!-- Lines draw in sequence. The cube positions and hub never move. -->
+<g opacity="1">
+
+<path d="M500 281 L285 208" fill="none" stroke="#3A87DC" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="320" stroke-dashoffset="320">
+
+</path>
+</g>
+<g opacity="1">
+
+<path d="M500 281 L715 208" fill="none" stroke="#3A87DC" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="320" stroke-dashoffset="320">
+
+</path>
+</g>
+<g opacity="1">
+
+<path d="M500 320 L282 424" fill="none" stroke="#3A87DC" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="320" stroke-dashoffset="320">
+
+</path>
+</g>
+<g opacity="1">
+
+<path d="M500 320 L718 424" fill="none" stroke="#3A87DC" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="320" stroke-dashoffset="320">
+
+</path>
+</g>
+<g filter="url(#tinyshadow)" stroke="#68758A" stroke-width="2" stroke-linejoin="round">
+<path d="M280 132 L343 163.5 L280 195.0 L217 163.5 Z" fill="url(#topface)"/>
+<path d="M217 163.5 L280 195.0 L280 244.14 L217 212.64 Z" fill="url(#frontleft)"/>
+<path d="M280 195.0 L343 163.5 L343 212.64 L280 244.14 Z" fill="url(#frontright)"/>
+</g>
+<g filter="url(#tinyshadow)" stroke="#68758A" stroke-width="2" stroke-linejoin="round">
+<path d="M720 132 L783 163.5 L720 195.0 L657 163.5 Z" fill="url(#topface)"/>
+<path d="M657 163.5 L720 195.0 L720 244.14 L657 212.64 Z" fill="url(#frontleft)"/>
+<path d="M720 195.0 L783 163.5 L783 212.64 L720 244.14 Z" fill="url(#frontright)"/>
+</g>
+<g filter="url(#tinyshadow)" stroke="#68758A" stroke-width="2" stroke-linejoin="round">
+<path d="M280 398 L343 429.5 L280 461.0 L217 429.5 Z" fill="url(#topface)"/>
+<path d="M217 429.5 L280 461.0 L280 510.14 L217 478.64 Z" fill="url(#frontleft)"/>
+<path d="M280 461.0 L343 429.5 L343 478.64 L280 510.14 Z" fill="url(#frontright)"/>
+</g>
+<g filter="url(#tinyshadow)" stroke="#68758A" stroke-width="2" stroke-linejoin="round">
+<path d="M720 398 L783 429.5 L720 461.0 L657 429.5 Z" fill="url(#topface)"/>
+<path d="M657 429.5 L720 461.0 L720 510.14 L657 478.64 Z" fill="url(#frontleft)"/>
+<path d="M720 461.0 L783 429.5 L783 478.64 L720 510.14 Z" fill="url(#frontright)"/>
+</g>
+<g>
+<circle cx="500" cy="304" r="71" fill="#EAF3FF" opacity=".87"/>
+<circle cx="500" cy="304" r="55" fill="#2E7ACC"/>
+<circle cx="500" cy="304" r="46" fill="#2573CA"/>
+<g fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(476 282)">
+<path d="M0 16 24 4 48 16 24 28 0 16Z"/><path d="M3 27 24 38 45 27"/><path d="M3 37 24 48 45 37"/>
+</g></g>
+</svg>
