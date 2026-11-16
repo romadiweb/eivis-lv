@@ -278,9 +278,9 @@
     inset: 68px 0 0;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    overflow: hidden;
     overscroll-behavior: contain;
-    padding: 20px 16px max(24px, env(safe-area-inset-bottom));
+    padding: 0 16px max(16px, env(safe-area-inset-bottom));
     background: var(--surface);
     visibility: hidden;
     opacity: 0;
@@ -299,6 +299,13 @@
 
   .site-header__mobile-nav {
     display: grid;
+    align-content: start;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-block: 20px 16px;
+    scrollbar-gutter: stable;
   }
 
   .site-header__mobile-group {
@@ -352,7 +359,8 @@
     display: grid;
     place-items: center;
     min-height: 46px;
-    margin-top: auto;
+    flex: 0 0 auto;
+    margin-top: 12px;
     border-radius: 8px;
     background: #050505;
     color: #fff;
