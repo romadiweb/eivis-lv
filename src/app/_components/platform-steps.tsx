@@ -49,6 +49,7 @@ export function PlatformSteps() {
                     <circle
                       key={paused ? "still" : "playing"}
                       className="platform-steps__progress"
+                      style={illustration === "izvelies" ? { animationDuration: "12.8s" } : undefined}
                       cx="12"
                       cy="12"
                       r="10"
@@ -64,7 +65,7 @@ export function PlatformSteps() {
           </li>
         ))}
       </ul>
-      <picture key={illustration} className="platform-steps__visual">
+      <picture key={illustration} className="platform-steps__visual" data-illustration={illustration}>
         {inView && !paused && (
           <source media="(prefers-reduced-motion: no-preference)" srcSet={`/${illustration}.svg`} />
         )}

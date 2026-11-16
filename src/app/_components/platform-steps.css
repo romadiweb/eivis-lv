@@ -37,6 +37,11 @@
   object-fit: contain;
 }
 
+.platform-steps__visual[data-illustration="izvelies"] {
+  width: min(658px, 100%);
+  aspect-ratio: 658 / 500;
+}
+
 .platform-steps__row {
   display: flex;
   align-items: center;
@@ -146,6 +151,11 @@
   .platform-steps__visual {
     grid-area: auto;
     width: min(310px, 100%);
+  }
+
+  .platform-steps__visual[data-illustration="izvelies"] {
+    width: min(434px, 100%);
+    aspect-ratio: 434 / 330;
   }
 }
 

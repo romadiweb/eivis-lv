@@ -1,61 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="825" height="465" viewBox="105 75 825 465" fill="none" role="img" aria-label="Izvēlies — neatkarīgu EIVIS moduļu izvēle">
-<title>Izvēlies — neatkarīgu EIVIS moduļu izvēle</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="380" viewBox="180 105 640 380" fill="none" role="img" aria-labelledby="art-title art-desc">
+<title id="art-title">Izvēlies — EIVIS modular selection</title>
+<desc id="art-desc">A quiet architectural composition of thin isometric module planes. A translucent blue layer rises subtly above a fixed selection slot.</desc>
 <defs>
-<filter id="softshadow" x="-35%" y="-35%" width="170%" height="190%"><feDropShadow dx="0" dy="14" stdDeviation="19" flood-color="#405575" flood-opacity=".105"/></filter>
-<filter id="tinyshadow" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#405575" flood-opacity=".13"/></filter>
-<linearGradient id="frontleft" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#F6F7FA"/><stop offset="1" stop-color="#D9DEE6"/></linearGradient>
-<linearGradient id="frontright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C9D2E0"/><stop offset="1" stop-color="#A9B5C6"/></linearGradient>
-<linearGradient id="blueleft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#498BDF"/><stop offset="1" stop-color="#2169C5"/></linearGradient>
-<linearGradient id="blueright" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CCE4FF"/><stop offset="1" stop-color="#9AC7F7"/></linearGradient>
-<linearGradient id="topface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#F1F4F8"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FEFFFF"/><stop offset="1" stop-color="#F6F8FB"/></linearGradient>
+  <linearGradient id="blue" x1=".17" y1=".05" x2=".8" y2="1"><stop stop-color="#BBD9FF" stop-opacity=".88"/><stop offset="1" stop-color="#EAF4FF" stop-opacity=".50"/></linearGradient>
+  <linearGradient id="blue-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7EB5F8"/><stop offset="1" stop-color="#427FD7"/></linearGradient>
+  <linearGradient id="grey-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#DDE4EE"/><stop offset="1" stop-color="#BBC8D7"/></linearGradient>
+  <filter id="soft" x="-35%" y="-80%" width="170%" height="260%"><feGaussianBlur stdDeviation="12"/></filter>
 </defs>
 <style>
-svg { overflow:visible; shape-rendering:geometricPrecision; }
-* { vector-effect:non-scaling-stroke; }
+  .line { stroke:#BAC7D6; stroke-width:1.45; stroke-linecap:round; stroke-linejoin:round; }
+  .quiet { stroke:#D4DDE8; stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round; }
+  .edge { stroke:#AFC0D4; stroke-width:1.25; stroke-linejoin:round; }
+  .active { animation: slow-rise 6.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .inner-line { animation: breathe 6.4s ease-in-out infinite; }
+  @keyframes slow-rise { 0%,12%,89%,100%{transform:translateY(0)} 34%,68%{transform:translateY(-13px)} }
+  @keyframes breathe { 0%,12%,89%,100%{opacity:.48} 34%,68%{opacity:1} }
+  @media (prefers-reduced-motion:reduce){.active,.inner-line{animation:none!important}}
 </style>
-<!-- Fixed dashboard surface. No movement in these elements. -->
-<g filter="url(#softshadow)" transform="rotate(-5 430 310)">
-<rect x="124" y="94" width="588" height="398" rx="30" fill="#FAFBFD" stroke="#C8D0DC" stroke-width="2.4"/>
-<rect x="140" y="110" width="556" height="64" rx="20" fill="#F2F5F9"/>
-<circle cx="168" cy="141" r="6" fill="#C4CCD7"/><circle cx="189" cy="141" r="6" fill="#C4CCD7"/><circle cx="210" cy="141" r="6" fill="#C4CCD7"/>
-<rect x="244" y="134" width="152" height="12" rx="6" fill="#D3DAE5"/>
-<rect x="162" y="205" width="238" height="110" rx="20" fill="#E7EBF0" stroke="#D0D8E1" stroke-width="2"/>
-<rect x="436" y="205" width="238" height="110" rx="20" fill="#F6FAFE" stroke="#99BAE4" stroke-width="2.4" stroke-dasharray="9 8"/>
-<rect x="162" y="340" width="238" height="110" rx="20" fill="#E7EBF0" stroke="#D0D8E1" stroke-width="2"/>
-<rect x="436" y="340" width="238" height="110" rx="20" fill="#E7EBF0" stroke="#D0D8E1" stroke-width="2"/>
+<!-- All faint structural geometry is static. -->
+<ellipse cx="504" cy="439" rx="254" ry="32" fill="#97ACC7" opacity=".08" filter="url(#soft)"/>
+<!-- left empty module tray -->
+<path d="M251 294 Q248 290 253 287 L339 243 Q344 241 349 243 L436 286 Q443 290 437 294 L350 339 Q345 342 339 339Z" fill="url(#paper)" stroke="#CDD7E3" stroke-width="1.4"/>
+<path d="M251 294v10q0 3 4 5l84 42q6 3 10 0l87-44q3-2 3-5v-10" stroke="#DBE2EA" stroke-width="1.35"/>
+<path d="M251 304 340 352 M439 302 350 352" stroke="#DFE5EC" stroke-width="1.1"/>
+<path d="M280 289 344 257 408 289 344 321Z" stroke="#DDE5EE" stroke-width="1.15" stroke-dasharray="5 6"/>
+<!-- right empty module tray -->
+<path d="M563 294 Q559 290 565 287 L650 243 Q655 241 660 243 L748 286 Q754 290 749 294 L660 339 Q656 342 651 339Z" fill="url(#paper)" stroke="#CDD7E3" stroke-width="1.4"/>
+<path d="M563 294v10q0 3 4 5l84 42q6 3 10 0l87-44q3-2 3-5v-10" stroke="#DBE2EA" stroke-width="1.35"/>
+<path d="M563 304 651 352 M751 302 661 352" stroke="#DFE5EC" stroke-width="1.1"/>
+<path d="M591 289 655 257 719 289 655 321Z" stroke="#DDE5EE" stroke-width="1.15" stroke-dasharray="5 6"/>
+<!-- mid-plane selection bay, held in position -->
+<path d="M392 294 500 238 608 294 500 351Z" fill="#F9FBFF" fill-opacity=".72" stroke="#A8BCD3" stroke-width="1.45" stroke-dasharray="5 7"/>
+<path d="M392 295v13L500 365 608 307v-13" stroke="#E1E8F1" stroke-width="1.25" stroke-linejoin="round"/>
+<path d="M500 351v14" stroke="#C8D5E6" stroke-width="1.25"/>
+<!-- exposed optical guides / no functional UI metaphors -->
+<path d="M500 122v50 M500 381v55" class="quiet" stroke-dasharray="3 7"/>
+<circle cx="500" cy="121" r="3.1" fill="#CDD9E9"/>
+<circle cx="500" cy="438" r="3.1" fill="#CDD9E9"/>
+<!-- thin translucent chosen module; the only moving object -->
+<g class="active">
+  <path d="M387 267 500 208 613 267 500 326Z" fill="#8ABFF4" opacity=".13" filter="url(#soft)" transform="translate(0 11)"/>
+  <path d="M388 267v8l112 59 112-59v-8L500 326Z" fill="#B6D7FF" fill-opacity=".34" stroke="#8DB6E8" stroke-width="1.25" stroke-linejoin="round"/>
+  <path d="M389 266 Q386 264 390 262 L496 207 Q500 205 504 207 L610 262 Q614 264 611 266 L504 322 Q500 324 496 322Z" fill="url(#blue)" stroke="#6B9FD9" stroke-width="1.55"/>
+  <path class="inner-line" d="m424 263 76-40 76 40-76 40Z" stroke="url(#blue-edge)" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="m484 255 16-9 16 9-16 9Z" fill="#4F8DDC" fill-opacity=".56" stroke="#4E86CB" stroke-width="1.1"/>
+  <path d="M500 264v12" stroke="#4E86CB" stroke-width="1.2"/>
 </g>
-<!-- Stationary configuration panel -->
-<g filter="url(#tinyshadow)">
-<rect x="717" y="140" width="209" height="238" rx="26" fill="white" stroke="#BBC5D2" stroke-width="2"/>
-<rect x="740" y="168" width="89" height="10" rx="5" fill="#D4DBE5"/>
-<path d="M744 222h148M744 277h148" stroke="#CCD2DB" stroke-width="10" stroke-linecap="round"/>
-<path d="M744 222h96M744 277h61" stroke="#3C85DE" stroke-width="10" stroke-linecap="round"/>
-<circle cx="840" cy="222" r="15" fill="white" stroke="#74839B" stroke-width="2.5"/>
-<circle cx="805" cy="277" r="15" fill="white" stroke="#74839B" stroke-width="2.5"/>
-<rect x="745" y="324" width="67" height="30" rx="15" fill="#DCE1E8"/><circle cx="761" cy="339" r="12" fill="white" stroke="#B3BCCB" stroke-width="1.3"/>
-</g>
-<!-- Inserted component matches the slot precisely, including dashboard perspective. -->
-<g transform="rotate(-5 430 310)">
-  <g opacity="0">
-    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.08;.21;.79;.90;1" />
-    <g transform="translate(0 0)">
-      <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="158 122;158 122;0 0;0 0;158 122;158 122" keyTimes="0;.17;.46;.78;.90;1" calcMode="spline" keySplines="0 0 1 1;.24 .0 .18 1;0 0 1 1;0 0 1 1;0 0 1 1"/>
-      <!-- Fitted to slot x=436..674 y=205..315; 6 px inner margin. -->
-      <rect x="442" y="211" width="226" height="98" rx="17" fill="#FFFFFF" stroke="#6486B4" stroke-width="2.3" filter="url(#tinyshadow)"/>
-      <rect x="454" y="222" width="202" height="75" rx="12" fill="#F7FAFF" stroke="#E0E8F2" stroke-width="1.4"/>
-      <g transform="translate(551 233) scale(.57)" stroke="#68758A" stroke-width="2.2" stroke-linejoin="round">
-        <path d="M0 0 L39 19.5 L0 39 L-39 19.5Z" fill="#DFEDFF"/>
-        <path d="M-39 19.5 L0 39 L0 68 L-39 48.5Z" fill="url(#blueleft)"/>
-        <path d="M0 39 L39 19.5 L39 48.5 L0 68Z" fill="url(#blueright)"/>
-      </g>
-      <rect x="525" y="285" width="63" height="5" rx="2.5" fill="#BCC9DB"/>
-    </g>
-  </g>
-  <!-- Checkmark only after the exact-fit module has landed. -->
-  <g opacity="0">
-    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.46;.52;.79;.86;1" />
-    <circle cx="651" cy="221" r="19" fill="#337CD4" stroke="#FFFFFF" stroke-width="3"/>
-    <path d="m643 221 5 5 11-12" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-</g>
+<!-- three short peripheral register marks, decorative but stationary -->
+<path d="M347 207v-20 M341 192h12 M655 207v-20 M649 192h12" stroke="#D6DFEA" stroke-width="1.1" stroke-linecap="round"/>
+<path d="M500 168v-14" stroke="#A9BFDC" stroke-width="1.3" stroke-linecap="round"/>
 </svg>
