@@ -4,6 +4,7 @@ import paperPlane from "../../../../public/contact-paper-plane.png";
 import clipboard from "../../../../public/contact-clipboard.png";
 import chatBubbles from "../../../../public/contact-chat-bubbles.png";
 import handshake from "../../../../public/contact-handshake.png";
+import "@/app/_components/inner-hero.css";
 import "./contact-page.css";
 
 export function ContactPage() {

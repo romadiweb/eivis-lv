@@ -1,0 +1,125 @@
+.product-overview__benefits,
+.product-overview__features,
+.product-overview__cta {
+  width: min(1280px, 100%);
+  margin-inline: auto;
+}
+
+.product-overview__benefits,
+.product-overview__cta {
+  text-align: center;
+}
+
+.product-overview__features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: clamp(64px, 8vw, 104px);
+}
+
+.product-overview__features li {
+  padding: 24px;
+  border: 1px solid #e0e1e6;
+  border-radius: 8px;
+}
+
+.product-overview__features svg {
+  display: block;
+  color: #60646b;
+}
+
+.product-overview__features h2 {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.product-overview__features p {
+  margin-top: 8px;
+  color: #60646b;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.product-overview__benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.product-overview__benefits li {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  min-height: 242px;
+  padding: 32px 24px 28px;
+  border: 1px solid #e0e1e6;
+  border-radius: 8px;
+}
+
+.product-overview__benefits svg {
+  color: #60646b;
+}
+
+.product-overview__benefits h2,
+.product-overview__cta h2 {
+  color: #1c2024;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.product-overview__benefits h2 {
+  margin-top: 18px;
+  font-size: clamp(24px, 2.5vw, 36px);
+}
+
+.product-overview__benefits p {
+  max-width: 26ch;
+  margin-top: 16px;
+  color: #60646b;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.product-overview__cta {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+  margin-block: clamp(64px, 8vw, 104px) 55px;
+  padding: clamp(56px, 8vw, 112px) 24px;
+  border-radius: 24px;
+  background: #f9f9fb;
+}
+
+.product-overview__cta h2 {
+  max-width: 680px;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.09;
+}
+
+.product-overview__cta .pill-button {
+  min-height: 48px;
+  padding-inline: 25px;
+  font-size: 16px;
+}
+
+@media (max-width: 960px) {
+  .product-overview__features,
+  .product-overview__benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .product-overview__features,
+  .product-overview__benefits {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .product-overview__benefits li {
+    min-height: 0;
+  }
+}

@@ -15,7 +15,7 @@ export const pageContent: Record<string, PageContent> = {
   },
   "produkts/parskats": {
     title: "Pārskats",
-    description: "Īss skatījums uz EIVIS kā vienotu vidi izglītības procesiem.",
+    description: "EIVIS palīdz izglītības iestādei samazināt administratīvo slodzi, automatizēt ikdienas procesus un uzlabot informācijas apriti. Visi nepieciešamie rīki vienuviet ļauj darbiniekiem ietaupīt laiku, vadībai pārskatāmāk organizēt darbu un iestādei pakāpeniski attīstīt digitālo vidi atbilstoši savām vajadzībām.",
   },
   "produkts/eivis-iespejas": {
     title: "EIVIS iespējas",

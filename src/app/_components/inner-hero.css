@@ -1,0 +1,15 @@
+:is(.secondary-page, .contact-page__page) {
+  --inner-hero-start: clamp(24px, 4vw, 56px);
+}
+
+@media (max-width: 820px) {
+  :is(.secondary-page, .contact-page__page) {
+    --inner-hero-start: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  :is(.secondary-page, .contact-page__page) {
+    --inner-hero-start: 20px;
+  }
+}

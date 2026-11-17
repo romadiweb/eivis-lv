@@ -35,8 +35,8 @@ export function HomeHero() {
         <div className="home-hero__lead">
           <h1 id="home-hero-title">EIVIS izglītības pārvaldībai</h1>
           <div className="home-hero__actions">
-            <Link href="/kontakti">Pieteikt demonstrāciju <ArrowRight size={15} aria-hidden="true" /></Link>
-            <Link href="/produkts">Iepazīt EIVIS</Link>
+            <Link href="/kontakti" className="pill-button pill-button--primary">Pieteikt demonstrāciju <ArrowRight size={15} aria-hidden="true" /></Link>
+            <Link href="/produkts" className="pill-button pill-button--secondary">Iepazīt EIVIS</Link>
           </div>
         </div>
         <svg className="home-hero__field" viewBox="0 0 480 480" aria-hidden="true">

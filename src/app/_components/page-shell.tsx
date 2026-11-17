@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
 import type { PageContent } from "@/lib/page-content";
+import "./inner-hero.css";
 import "./page-shell.css";
 
 type PageShellProps = {
   content: PageContent;
   contentKey: string;
+  children?: ReactNode;
 };
 
 type HeroVariant = "editorial" | "media" | "split" | "compact";
@@ -50,17 +54,19 @@ function getVariant(contentKey: string): HeroVariant {
   return "split";
 }
 
-export function PageShell({ content, contentKey }: PageShellProps) {
+export function PageShell({ content, contentKey, children }: PageShellProps) {
   const section = contentKey.split("/")[0];
   const variant = getVariant(contentKey);
   const hasFrame = variant === "media" || variant === "split";
   const showAction = section !== "resursi";
+  const isOverview = contentKey === "produkts/parskats";
   const titleId = `secondary-hero-${contentKey.replaceAll("/", "-")}`;
 
   return (
     <main
       className={`secondary-page secondary-page--${variant}`}
       data-section={section}
+      data-overview={isOverview || undefined}
     >
       <section
         className="secondary-hero"
@@ -76,10 +82,15 @@ export function PageShell({ content, contentKey }: PageShellProps) {
             <p>{content.description}</p>
             {showAction ? (
               <div className="secondary-hero__actions">
-                <Link href="/kontakti" className="secondary-hero__primary">
+                <Link href="/kontakti" className="pill-button pill-button--primary">
                   Pieteikt demonstrāciju
-                  <span aria-hidden="true">→</span>
+                  <ArrowRight size={15} aria-hidden="true" />
                 </Link>
+                {isOverview && (
+                  <Link href="/kontakti#contact-form" className="pill-button pill-button--secondary">
+                    Sazināties ar komandu
+                  </Link>
+                )}
               </div>
             ) : null}
           </div>
@@ -90,6 +101,7 @@ export function PageShell({ content, contentKey }: PageShellProps) {
           ) : null}
         </div>
       </section>
+      {children}
     </main>
   );
 }

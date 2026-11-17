@@ -1,0 +1,190 @@
+.adoption {
+  width: min(1280px, 100%);
+  margin: clamp(72px, 9vw, 132px) auto 0;
+  --adoption-blue: #3777db;
+}
+
+.adoption__header {
+  max-width: 660px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.adoption__header h2 {
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.adoption__header p {
+  margin-top: 16px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.adoption__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 9fr) minmax(0, 11fr);
+  grid-template-areas: "steps art";
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  margin-top: clamp(44px, 8vw, 112px);
+}
+
+.adoption__steps {
+  grid-area: steps;
+  border-inline-start: 2px solid var(--hairline);
+}
+
+.adoption__step {
+  position: relative;
+  padding-inline-start: clamp(16px, 2.2vw, 28px);
+}
+
+.adoption__step::before {
+  position: absolute;
+  inset: 0 auto 0 -2px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--adoption-blue);
+  opacity: 0;
+  transition: opacity 500ms ease;
+  content: "";
+}
+
+.adoption__step[data-active="true"]::before {
+  opacity: 1;
+}
+
+.adoption__step button {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: start;
+  cursor: pointer;
+}
+
+.adoption__step button:hover,
+.adoption__step[data-active="true"] button {
+  color: var(--foreground);
+}
+
+.adoption__step button:focus-visible {
+  outline: 2px solid var(--adoption-blue);
+  outline-offset: 2px;
+}
+
+.adoption__details {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 520ms ease, opacity 420ms ease;
+}
+
+.adoption__step[data-active="true"] .adoption__details {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.adoption__details-inner {
+  min-height: 0;
+  overflow: hidden;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.adoption__details-inner ul {
+  display: grid;
+  gap: 7px;
+  margin-block: 12px 20px;
+}
+
+.adoption__details-inner li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.adoption__details-inner svg {
+  flex: 0 0 auto;
+  align-self: center;
+  color: var(--adoption-blue);
+}
+
+.adoption__art {
+  grid-area: art;
+  display: grid;
+  place-items: center;
+  min-height: 410px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f9f9fb;
+}
+
+.adoption__art > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.adoption__plane,
+.adoption__wires {
+  opacity: 0;
+  transition: opacity 560ms ease;
+}
+
+.adoption__plane {
+  opacity: .28;
+  stroke-width: 1.4;
+}
+
+.adoption__plane[data-shown="true"],
+.adoption__wires[data-shown="true"] {
+  opacity: 1;
+}
+
+.adoption__plane-base {
+  fill: #edf1f7;
+  stroke: #c6d0df;
+}
+
+.adoption__plane-face {
+  fill: #fff;
+  stroke: #aabbd2;
+}
+
+.adoption__plane-details {
+  stroke: var(--adoption-blue);
+  stroke-opacity: .66;
+}
+
+@media (max-width: 760px) {
+  .adoption__layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "art" "steps";
+    align-items: start;
+  }
+
+  .adoption__art {
+    min-height: 0;
+    aspect-ratio: 660 / 470;
+  }
+
+  .adoption__steps {
+    min-height: 330px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adoption__details,
+  .adoption__step::before,
+  .adoption__plane,
+  .adoption__wires {
+    transition: none;
+  }
+}

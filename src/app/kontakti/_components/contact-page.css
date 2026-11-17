@@ -7,7 +7,7 @@
   justify-items: center;
   width: min(1280px, calc(100% - 48px));
   margin-inline: auto;
-  padding: clamp(72px, 9vw, 132px) 20px clamp(64px, 7vw, 96px);
+  padding: var(--inner-hero-start) 20px clamp(64px, 7vw, 96px);
   border-bottom: 1px solid #d4d4d8;
   text-align: center;
 }
