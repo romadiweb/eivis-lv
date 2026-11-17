@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { mainNavigation } from "@/lib/navigation";
@@ -107,8 +108,7 @@ export function SiteHeader() {
     >
       <div className="site-header__bar">
         <Link className="site-header__brand" href="/" aria-label="EIVIS sākums">
-          <span className="site-header__mark" aria-hidden="true" />
-          <span>EIVIS</span>
+          <Image src="/eivis-logo-full-black.svg" alt="" width={116} height={24} unoptimized />
         </Link>
 
         <button

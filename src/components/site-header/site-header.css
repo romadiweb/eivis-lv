@@ -59,21 +59,12 @@
 .site-header__brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: #191a1f;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.site-header__mark {
-  width: 16px;
-  height: 16px;
-  border-top: 4px solid currentColor;
-  border-left: 4px solid currentColor;
-  transform: rotate(45deg) translateY(3px);
-  transform-origin: center;
+.site-header__brand img {
+  width: 96px;
+  height: auto;
 }
 
 .site-header__nav {
@@ -374,8 +365,8 @@
     width: calc(100% - 32px);
   }
 
-  .site-header__brand {
-    font-size: 18px;
+  .site-header__brand img {
+    width: 80px;
   }
 
   .site-header__mobile-panel { padding-inline: 16px; }

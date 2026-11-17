@@ -57,7 +57,7 @@ export function FormatWheel() {
         </ul>
       </div>
 
-      <h2 id="format-wheel-title">
+      <h2 id="format-wheel-title" className="mosaic-card-title">
         Informācija dažādos
         <br />
         formātos

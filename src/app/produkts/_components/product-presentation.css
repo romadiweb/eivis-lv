@@ -1,0 +1,39 @@
+.product-dashboard, .product-cta {
+  width: min(1280px, 100%);
+  margin-inline: auto;
+}
+
+.product-dashboard {
+  display: block;
+  height: auto;
+  margin-bottom: clamp(24px, 4vw, 48px);
+  border: 1px solid #8b9098;
+  border-radius: 12px;
+}
+
+.product-cta {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  gap: 24px;
+  margin-block: clamp(64px, 8vw, 104px) 55px;
+  padding: clamp(56px, 8vw, 112px) 24px;
+  border-radius: 24px;
+  background: #f9f9fb;
+}
+
+.product-cta h2 {
+  max-width: 680px;
+  color: #1c2024;
+  font-weight: 600;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.09;
+}
+
+.product-cta .pill-button {
+  min-height: 48px;
+  padding-inline: 25px;
+  font-size: 16px;
+}

@@ -1,12 +1,10 @@
 .product-overview__benefits,
-.product-overview__features,
-.product-overview__cta {
+.product-overview__features {
   width: min(1280px, 100%);
   margin-inline: auto;
 }
 
-.product-overview__benefits,
-.product-overview__cta {
+.product-overview__benefits {
   text-align: center;
 }
 
@@ -62,8 +60,7 @@
   color: #60646b;
 }
 
-.product-overview__benefits h2,
-.product-overview__cta h2 {
+.product-overview__benefits h2 {
   color: #1c2024;
   font-weight: 600;
   line-height: 1.1;
@@ -82,28 +79,6 @@
   color: #60646b;
   font-size: 16px;
   line-height: 1.4;
-}
-
-.product-overview__cta {
-  display: grid;
-  justify-items: center;
-  gap: 24px;
-  margin-block: clamp(64px, 8vw, 104px) 55px;
-  padding: clamp(56px, 8vw, 112px) 24px;
-  border-radius: 24px;
-  background: #f9f9fb;
-}
-
-.product-overview__cta h2 {
-  max-width: 680px;
-  font-size: clamp(30px, 5vw, 48px);
-  line-height: 1.09;
-}
-
-.product-overview__cta .pill-button {
-  min-height: 48px;
-  padding-inline: 25px;
-  font-size: 16px;
 }
 
 @media (max-width: 960px) {

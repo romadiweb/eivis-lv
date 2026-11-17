@@ -77,7 +77,7 @@
   z-index: 10;
 }
 
-.format-wheel h2 {
+.mosaic-card-title {
   margin: 0;
   padding: 0 12px 49px;
   font-size: 24px;
@@ -144,7 +144,7 @@
   .format-wheel { min-height: 390px; }
   .format-wheel__viewport { min-height: 230px; }
   .format-wheel__viewport::after { top: 192px; }
-  .format-wheel h2 { font-size: 21px; padding-bottom: 39px; }
+  .mosaic-card-title { font-size: 21px; padding-bottom: 39px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

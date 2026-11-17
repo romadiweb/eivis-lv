@@ -61,6 +61,7 @@ export function HomeHero() {
           })}
           </g>
           <rect className="home-hero__center" x="162" y="162" width="156" height="156" rx="36" fill="white" stroke="#e1e3e5" />
+          <image href="/eivis-logo-icon-black.svg" x="192" y="192" width="96" height="96" />
         </svg>
         <div className="home-hero__detail">
           <Link className="home-hero__announcement" href="/produkts/eivis-iespejas">

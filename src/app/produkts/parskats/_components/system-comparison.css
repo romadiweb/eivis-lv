@@ -1,0 +1,131 @@
+.system-comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+  grid-template-areas: "panel copy";
+  align-items: center;
+  gap: clamp(32px, 7vw, 112px);
+  width: min(1280px, 100%);
+  margin: clamp(64px, 8vw, 104px) auto 0;
+}
+
+.system-comparison__copy {
+  grid-area: copy;
+}
+
+.system-comparison__copy h2 {
+  margin-top: 20px;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+
+.system-comparison__copy p {
+  max-width: 53ch;
+  margin-top: 22px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.system-comparison__copy a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.system-comparison__copy a:hover {
+  color: #245fae;
+  border-color: currentColor;
+}
+
+.system-comparison__panel {
+  grid-area: panel;
+  padding: clamp(20px, 3.5vw, 48px);
+  overflow-x: auto;
+  border-radius: 8px;
+  background: #f8f8fa;
+}
+
+.system-comparison__panel:focus-visible,
+.system-comparison__copy a:focus-visible {
+  outline: 2px solid #3777db;
+  outline-offset: 3px;
+}
+
+.system-comparison__table-wrap {
+  position: relative;
+  isolation: isolate;
+  min-width: 450px;
+  padding-block: 8px;
+}
+
+.system-comparison__table-wrap::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 37% 0 26%;
+  border: 1px solid #e0e1e6;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 2px 6px rgb(23 23 23 / 8%);
+  content: "";
+}
+
+.system-comparison table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.system-comparison col:first-child {
+  width: 26%;
+}
+
+.system-comparison :is(th, td) {
+  padding: 10px 12px;
+  font-weight: 500;
+}
+
+.system-comparison tbody :is(th, td:last-child),
+.system-comparison__note {
+  color: var(--muted);
+}
+
+.system-comparison tbody tr:hover {
+  background: rgb(55 119 219 / 6%);
+}
+
+.system-comparison__pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #ededf0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.system-comparison__pill--accent {
+  background: #e5f2ff;
+  color: #245fae;
+}
+
+.system-comparison__note {
+  margin: 14px 12px 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+  .system-comparison {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "panel";
+  }
+}

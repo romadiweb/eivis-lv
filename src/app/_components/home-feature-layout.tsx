@@ -3,11 +3,13 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import admissionsImage from "../../../public/eivis-admissions-workflow.png";
+import adminPhone from "../../../public/eivis-admin-phone.png";
 import dashboardImage from "../../../public/eivis-dashboard-showcase.png";
 import { PlatformSteps } from "./platform-steps";
 import { IntegrationsCard } from "./integrations-card";
 import { AnalyticsCard, DeviceAccessCard, UpdateCard, WorkflowCard } from "./update-card";
 import { FormatWheel } from "./format-wheel";
+import { MetallicLogo } from "./metallic-logo";
 
 function WideFeatureCard({ title, description, href, label, image, alt }: {
   title: ReactNode;
@@ -39,14 +41,22 @@ export function HomeFeatureLayout() {
       <PlatformSteps />
       <div className="home-feature-layout__mosaic">
         <article className="home-feature-layout__block home-feature-layout__tall home-feature-layout__platform">
+          <MetallicLogo />
           <h2>Jūsu organizācijas<br />digitālais pamats.</h2>
           <p className="home-feature-layout__platform-since">Izstrādē kopš 2020. gada.</p>
           <p>Viena modulāra platforma cilvēkiem, procesiem un informācijai — pielāgojama jūsu organizācijas vajadzībām.</p>
           <Link href="/produkts/parskats">Iepazīt EIVIS</Link>
         </article>
         <IntegrationsCard />
-        <div className="home-feature-layout__block" aria-hidden="true" />
         <FormatWheel />
+        <article className="home-feature-layout__block home-feature-layout__screen">
+          <Image
+            src={adminPhone}
+            alt="EIVIS administrācijas darba vide tālrunī"
+            sizes="(max-width: 600px) 44vw, (max-width: 1328px) 28vw, 330px"
+          />
+          <h2 className="mosaic-card-title">Viena sistēma.<br />Jebkurā ekrānā.</h2>
+        </article>
       </div>
       <section className="home-feature-layout__intro" aria-labelledby="home-modules-title">
         <h2 id="home-modules-title">Viena sistēma<br />visai organizācijai</h2>

@@ -1,8 +1,12 @@
 import { ChartNoAxesColumn, ClipboardList, Eye, Layers, ListFilter, Monitor, Plug, ShieldCheck, Workflow } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import overviewDashboard from "../../../../public/eivis-overview-dashboard.png";
 import { PageShell } from "@/app/_components/page-shell";
 import { pageContent } from "@/lib/page-content";
 import { AdoptionProgression } from "./_components/adoption-progression";
+import { SystemComparison } from "./_components/system-comparison";
+import "../_components/product-presentation.css";
 import "./overview.css";
 
 const benefits = [
@@ -48,6 +52,12 @@ const features = [
 export default function Page() {
   return (
     <PageShell content={pageContent["produkts/parskats"]} contentKey="produkts/parskats">
+      <Image
+        className="product-dashboard"
+        src={overviewDashboard}
+        alt="EIVIS administrācijas informācijas panelis ar kalendāru, uzdevumiem un jaunumiem"
+        sizes="(max-width: 520px) calc(100vw - 32px), (max-width: 1328px) calc(100vw - 48px), 1280px"
+      />
       <ul className="product-overview__benefits">
         {benefits.map(({ icon: Icon, title, description }) => (
           <li key={title}>
@@ -67,7 +77,8 @@ export default function Page() {
           </li>
         ))}
       </ul>
-      <section className="product-overview__cta" aria-labelledby="overview-cta-title">
+      <SystemComparison />
+      <section className="product-cta" aria-labelledby="overview-cta-title">
         <h2 id="overview-cta-title">Viena platforma visiem iestādes ikdienas procesiem</h2>
         <Link href="/kontakti" className="pill-button pill-button--primary">Pieteikt EIVIS demonstrāciju</Link>
       </section>

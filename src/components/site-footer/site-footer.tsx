@@ -34,7 +34,7 @@ export function SiteFooter() {
       <div className="site-footer__inner">
         <div className="site-footer__newsletter">
           <Link className="site-footer__brand-card" href="/" aria-label="EIVIS sākums">
-            <span className="site-footer__brand-mark" aria-hidden="true" />
+            <Image src="/eivis-logo-icon-white.svg" alt="" width={24} height={20} unoptimized />
           </Link>
           <div className="site-footer__eyebrow">
             <span aria-hidden="true" />
