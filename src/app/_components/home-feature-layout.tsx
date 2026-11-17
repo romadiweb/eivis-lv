@@ -7,9 +7,10 @@ import adminPhone from "../../../public/eivis-admin-phone.png";
 import dashboardImage from "../../../public/eivis-dashboard-showcase.png";
 import { PlatformSteps } from "./platform-steps";
 import { IntegrationsCard } from "./integrations-card";
-import { AnalyticsCard, DeviceAccessCard, UpdateCard, WorkflowCard } from "./update-card";
+import { AnalyticsCard, UpdateCard, WorkflowCard } from "./update-card";
 import { FormatWheel } from "./format-wheel";
 import { MetallicLogo } from "./metallic-logo";
+import { DeviceFeatureCard } from "./device-feature-card";
 
 function WideFeatureCard({ title, description, href, label, image, alt }: {
   title: ReactNode;
@@ -70,8 +71,10 @@ export function HomeFeatureLayout() {
         <Link href="/moduli">Iepazīt moduļus <ArrowRight size={14} aria-hidden="true" /></Link>
       </section>
       <div className="home-feature-layout__sequence">
-        <DeviceAccessCard />
-        <UpdateCard />
+        <div className="home-feature-layout__card-pair">
+          <DeviceFeatureCard />
+          <UpdateCard />
+        </div>
         <WideFeatureCard
           title={<>Svarīgais vienmēr<br />sasniedzams.</>}
           description="Vienota informācija dažādās darba vidēs — no personīgā tālruņa līdz organizācijas digitālajiem ekrāniem."
@@ -80,7 +83,7 @@ export function HomeFeatureLayout() {
           image={dashboardImage}
           alt="EIVIS pārskati datorā, tālrunī un organizācijas informācijas ekrānā"
         />
-        <div className="home-feature-layout__card-pair">
+        <div className="home-feature-layout__card-pair home-feature-layout__card-pair--screenshots">
           <WorkflowCard />
           <AnalyticsCard />
         </div>

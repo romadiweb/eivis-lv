@@ -164,6 +164,14 @@
   aspect-ratio: 2 / 1;
 }
 
+.secondary-hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: clamp(44px, 7vw, 88px);
+  border-radius: 18px;
+}
+
 .secondary-page--editorial .secondary-hero {
   padding-block-end: clamp(80px, 9vw, 124px);
 }

@@ -9,6 +9,7 @@ type PageShellProps = {
   content: PageContent;
   contentKey: string;
   children?: ReactNode;
+  heroMedia?: ReactNode;
 };
 
 type HeroVariant = "editorial" | "media" | "split" | "compact";
@@ -54,7 +55,7 @@ function getVariant(contentKey: string): HeroVariant {
   return "split";
 }
 
-export function PageShell({ content, contentKey, children }: PageShellProps) {
+export function PageShell({ content, contentKey, children, heroMedia }: PageShellProps) {
   const section = contentKey.split("/")[0];
   const variant = getVariant(contentKey);
   const hasFrame = variant === "media" || variant === "split";
@@ -94,11 +95,11 @@ export function PageShell({ content, contentKey, children }: PageShellProps) {
               </div>
             ) : null}
           </div>
-          {hasFrame ? (
+          {heroMedia ?? (hasFrame ? (
             <div className="secondary-hero__frame" aria-hidden="true">
               <span />
             </div>
-          ) : null}
+          ) : null)}
         </div>
       </section>
       {children}

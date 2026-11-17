@@ -6,13 +6,13 @@ import analyticsImage from "../../../public/eivis-analytics.png";
 import updateImage from "../../../public/eivis-update.png";
 import workflowImage from "../../../public/eivis-workflow.png";
 
-function FeatureCard({
+export function FeatureCard({
   title,
   description,
   linkLabel = "Uzzināt vairāk",
   children,
 }: {
-  title: string;
+  title: ReactNode;
   description: string;
   linkLabel?: string;
   children?: ReactNode;
@@ -28,15 +28,6 @@ function FeatureCard({
         </Link>
       </div>
     </article>
-  );
-}
-
-export function DeviceAccessCard() {
-  return (
-    <FeatureCard
-      title="Pieejamas no jebkuras ierīces"
-      description="Piekļūstiet EIVIS sistēmām datorā, planšetdatorā vai tālrunī un turpiniet darbu, arī mainot ierīci."
-    />
   );
 }
 

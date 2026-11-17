@@ -1,0 +1,77 @@
+.device-feature-card__diagram {
+  display: block;
+  width: min(100%, 390px);
+  height: auto;
+  margin-inline: auto;
+}
+
+.device-feature-card__platform {
+  fill: var(--surface);
+  stroke: #e0e1e6;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 3px 4px rgb(23 23 23 / 5%));
+}
+
+.device-feature-card__connection,
+.device-feature-card__signal {
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.device-feature-card__connection {
+  stroke: #d8dadd;
+}
+
+.device-feature-card__signal {
+  stroke: #3777db;
+  stroke-dasharray: 16 100;
+  stroke-dashoffset: 16;
+  opacity: 0;
+}
+
+.device-feature-card__device > rect {
+  fill: #f0f0f3;
+  stroke: #e5e5ea;
+  vector-effect: non-scaling-stroke;
+}
+
+.device-feature-card__device-symbol {
+  color: #555b65;
+  opacity: .72;
+}
+
+.device-feature-card__device-symbol text {
+  fill: currentColor;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .device-feature-card__signal {
+    animation: device-signal 7s linear 1.5s infinite;
+  }
+
+  .device-feature-card__signal[data-center] {
+    animation-delay: 0s;
+  }
+
+  .device-feature-card__device-symbol {
+    animation: device-icon-highlight 7s ease 1.5s infinite;
+  }
+
+  .device-feature-card__device[data-center] .device-feature-card__device-symbol {
+    animation-delay: 0s;
+  }
+}
+
+@keyframes device-signal {
+  0%, 7% { opacity: 0; stroke-dashoffset: 16; }
+  11% { opacity: .55; }
+  28% { opacity: .55; stroke-dashoffset: -84; }
+  33%, 100% { opacity: 0; stroke-dashoffset: -100; }
+}
+
+@keyframes device-icon-highlight {
+  0%, 24%, 48%, 100% { opacity: .72; }
+  31%, 35% { opacity: 1; }
+}

@@ -18,12 +18,12 @@
   height: auto;
 }
 
-.home-feature-layout__card-pair .update-card__visual {
+.home-feature-layout__card-pair--screenshots .update-card__visual {
   aspect-ratio: 1671 / 941;
   position: relative;
 }
 
-.home-feature-layout__card-pair .update-card__visual img {
+.home-feature-layout__card-pair--screenshots .update-card__visual img {
   width: auto;
   height: 100%;
   position: absolute;
