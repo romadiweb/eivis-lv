@@ -1,0 +1,141 @@
+.capability-directory {
+  width: min(1160px, 100%);
+  margin-inline: auto;
+  padding-block: clamp(88px, 10vw, 136px) 0;
+}
+
+.capability-directory__intro {
+  max-width: 760px;
+}
+
+.capability-directory__eyebrow {
+  color: #3777db;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.capability-directory__intro h2 {
+  max-width: 16ch;
+  margin-top: 16px;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.capability-directory__intro > p:last-child {
+  max-width: 68ch;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.capability-directory__tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: clamp(48px, 6vw, 72px);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.capability-directory__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.capability-directory__filters button {
+  min-height: 34px;
+  padding-inline: 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #60646c;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.capability-directory__filters button:hover { background: #f5f5f7; }
+.capability-directory__filters button[data-active] { border-color: #dce8f8; background: #eef4fd; color: #2b62ad; }
+.capability-directory__filters button:focus-visible,
+.capability-directory__group-header button:focus-visible,
+.capability-directory__search:focus-within { outline: 2px solid #3777db; outline-offset: 2px; }
+
+.capability-directory__search {
+  display: flex;
+  align-items: center;
+  flex: 0 0 210px;
+  gap: 8px;
+  min-height: 38px;
+  padding-inline: 12px;
+  border: 1px solid #dcdee0;
+  border-radius: 8px;
+  color: #8b8e96;
+}
+
+.capability-directory__search input { min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: var(--foreground); font: inherit; font-size: 13px; }
+.capability-directory__search input::placeholder { color: #8b8e96; }
+
+.capability-directory__note {
+  max-width: 84ch;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.capability-directory__groups { margin-top: 40px; border-top: 1px solid #dcdee0; }
+.capability-directory__group { border-bottom: 1px solid #dcdee0; }
+
+.capability-directory__group-header {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  min-height: 112px;
+  padding-block: 22px;
+}
+
+.capability-directory__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #eceef1;
+  border-radius: 10px;
+  color: #60646c;
+  box-shadow: 0 4px 12px rgb(23 23 23 / 5%);
+}
+
+.capability-directory__group-header h3 { font-size: 17px; font-weight: 600; line-height: 1.3; }
+.capability-directory__group-header p { margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.capability-directory__group-header button { min-height: 36px; padding: 0 4px; border: 0; background: transparent; color: #3777db; font-size: 13px; font-weight: 500; cursor: pointer; }
+
+.capability-directory__rows { border-top: 1px solid var(--hairline); }
+.capability-directory__rows[hidden] { display: none; }
+.capability-directory__row { display: grid; grid-template-columns: minmax(180px, 35fr) minmax(0, 65fr); gap: 28px; padding: 16px 0 16px 68px; border-bottom: 1px solid var(--hairline); }
+.capability-directory__row:last-child { border-bottom: 0; }
+.capability-directory__row strong { font-size: 13px; font-weight: 500; line-height: 1.45; }
+.capability-directory__row p { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+.capability-directory__empty { padding: 56px 0; color: var(--muted); text-align: center; }
+
+@media (max-width: 800px) {
+  .capability-directory__tools { align-items: stretch; flex-direction: column; }
+  .capability-directory__search { flex-basis: auto; width: min(100%, 320px); }
+}
+
+@media (max-width: 600px) {
+  .capability-directory { padding-top: 80px; }
+  .capability-directory__group-header { grid-template-columns: 44px minmax(0, 1fr); min-height: 0; padding-block: 24px; }
+  .capability-directory__icon { width: 44px; height: 44px; }
+  .capability-directory__group-header button { grid-column: 2; justify-self: start; min-height: 32px; }
+  .capability-directory__row { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 14px 0 14px 60px; }
+}

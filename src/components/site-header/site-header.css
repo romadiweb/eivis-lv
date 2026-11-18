@@ -97,7 +97,8 @@
 .site-header__nav-link:focus-visible,
 .site-header__nav-item:focus-within .site-header__nav-link,
 .site-header__nav-item:hover .site-header__nav-link,
-.site-header__nav-item[data-active="true"] .site-header__nav-link {
+.site-header__nav-item[data-active="true"] .site-header__nav-link,
+.site-header__nav-item[data-current="true"] .site-header__nav-link {
   background: var(--surface-muted);
   color: #050505;
   outline: none;

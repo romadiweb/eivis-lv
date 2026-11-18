@@ -1,0 +1,111 @@
+.security-finisher {
+  overflow: hidden;
+  min-height: 680px;
+  padding-top: clamp(96px, 11vw, 144px);
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.security-finisher__copy {
+  position: relative;
+  z-index: 1;
+  width: min(820px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.security-finisher__copy > p {
+  color: #3777db;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.security-finisher__copy h2 {
+  max-width: 17ch;
+  margin: 18px auto 0;
+  color: #171717;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.security-finisher__copy > div {
+  max-width: 66ch;
+  margin: 22px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.security-finisher__architecture {
+  position: relative;
+  width: min(1200px, 100%);
+  height: 330px;
+  margin: 56px auto 0;
+}
+
+.security-finisher__architecture svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 72%), rgb(0 0 0 / 28%) 72%, transparent);
+}
+
+.security-finisher__grid-lines {
+  fill: none;
+  stroke: #dbe2ea;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.security-finisher__label {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 190px;
+  padding: 12px 15px;
+  border: 1px solid #dfe3e8;
+  border-radius: 10px;
+  background: #fff;
+  text-align: left;
+  translate: -50% 0;
+  box-shadow: 0 4px 14px rgb(23 23 23 / 4%);
+}
+
+.security-finisher__label > span {
+  display: grid;
+  flex: 0 0 28px;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #eef4fd;
+  color: #3777db;
+  line-height: 0;
+}
+
+.security-finisher__label > span svg {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.security-finisher__label > div { display: grid; gap: 3px; }
+.security-finisher__label strong { color: #292b2f; font-size: 12px; font-weight: 600; }
+.security-finisher__label small { color: #8b8e96; font-size: 10px; }
+
+@media (max-width: 600px) {
+  .security-finisher { min-height: 590px; padding-top: 88px; }
+  .security-finisher__copy { width: calc(100% - 32px); }
+  .security-finisher__copy h2 { font-size: 34px; }
+  .security-finisher__architecture { width: 150%; height: 260px; margin-left: -25%; margin-top: 44px; }
+  .security-finisher__label { top: 34px; }
+}

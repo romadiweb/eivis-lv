@@ -3,10 +3,12 @@
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { mainNavigation } from "@/lib/navigation";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const dropdownGroups = useMemo(
     () => mainNavigation.filter((group) => group.items?.length),
     [],
@@ -87,6 +89,10 @@ export function SiteHeader() {
     setMobileOpen(false);
     setMobileGroup("");
   };
+  const closeDesktopMenu = () => {
+    cancelMenuClose();
+    setActiveTitle("");
+  };
   const activeGroup =
     dropdownGroups.find((group) => group.title === activeTitle) ?? dropdownGroups[0];
   const isMenuOpen = Boolean(activeTitle && activeGroup);
@@ -128,6 +134,7 @@ export function SiteHeader() {
             <div
               className="site-header__nav-item"
               data-active={activeTitle === group.title ? "true" : "false"}
+              data-current={pathname === group.href || pathname.startsWith(`${group.href}/`) ? "true" : "false"}
               key={group.title}
               onFocus={() => {
                 cancelMenuClose();
@@ -151,6 +158,7 @@ export function SiteHeader() {
               <Link
                 className="site-header__nav-link"
                 href={group.href}
+                onClick={closeDesktopMenu}
                 aria-haspopup={group.items ? "true" : undefined}
                 aria-expanded={group.items ? activeTitle === group.title : undefined}
               >
@@ -246,6 +254,7 @@ export function SiteHeader() {
                   className="site-header__dropdown-link"
                   href={item.href}
                   key={item.href}
+                  onClick={closeDesktopMenu}
                   role="menuitem"
                 >
                   {item.title}
