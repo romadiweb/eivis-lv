@@ -1,0 +1,218 @@
+.continuous-development {
+  container-type: inline-size;
+  width: min(100%, 390px);
+  aspect-ratio: 440 / 300;
+  display: grid;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.continuous-development__interface {
+  position: relative;
+  width: 100%;
+  padding-top: 8cqw;
+  color: #1c2024;
+  font-size: 2.15cqw;
+  line-height: 1.25;
+}
+
+.continuous-development svg {
+  width: 2.8cqw;
+  height: 2.8cqw;
+  flex-shrink: 0;
+  stroke-width: 1.65;
+}
+
+.continuous-development__notification {
+  position: absolute;
+  inset: 0 3.5% auto;
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  height: 11cqw;
+  padding: 2cqw 3cqw 4cqw;
+  border: 1px solid #e7e7eb;
+  border-radius: 4cqw;
+  background: #f0f0f3;
+  box-shadow: 0 2px 8px rgb(23 23 23 / 4%);
+  white-space: nowrap;
+}
+
+.continuous-development__notification > svg,
+.continuous-development__notification strong span,
+.continuous-development small {
+  color: #83858d;
+}
+
+.continuous-development__notification strong {
+  font-size: 2.7cqw;
+  font-weight: 600;
+}
+
+.continuous-development small {
+  margin-inline-start: auto;
+  font-size: 2cqw;
+}
+
+.continuous-development__pill {
+  padding: 1cqw 1.7cqw;
+  border-radius: 999px;
+  background: #91939c;
+  color: white;
+  font-size: 1.9cqw;
+}
+
+.continuous-development__panel {
+  position: relative;
+  padding: 3cqw;
+  border: 1px solid #e7e7eb;
+  border-radius: 4cqw;
+  background: #fff;
+  box-shadow: 0 4px 14px rgb(23 23 23 / 5%);
+}
+
+.continuous-development__header {
+  display: flex;
+  align-items: center;
+  gap: 2.3cqw;
+  text-align: start;
+}
+
+.continuous-development__icon {
+  display: grid;
+  place-items: center;
+  width: 9cqw;
+  height: 9cqw;
+  flex-shrink: 0;
+  border-radius: 2.5cqw;
+  background: #eee7fb;
+  color: #8958d4;
+}
+
+.continuous-development__icon svg {
+  width: 6cqw;
+  height: 6cqw;
+  stroke-width: 2.3;
+}
+
+.continuous-development h4 {
+  font-size: 3.4cqw;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.continuous-development__header p {
+  margin-top: .8cqw;
+  font-size: 2.2cqw;
+  color: #757780;
+}
+
+.continuous-development__metadata {
+  display: grid;
+  grid-template-columns: .75fr 1fr 1.15fr;
+  margin-block: 3cqw;
+  text-align: start;
+}
+
+.continuous-development__metadata > div {
+  padding-inline: 3cqw 1cqw;
+}
+
+.continuous-development__metadata > div + div {
+  border-inline-start: 1px solid #e0e1e6;
+}
+
+.continuous-development dt {
+  display: flex;
+  align-items: center;
+  gap: 1.3cqw;
+  color: #757780;
+  white-space: nowrap;
+}
+
+.continuous-development dd {
+  padding-inline-start: 4cqw;
+  font-size: 2.8cqw;
+  font-weight: 650;
+}
+
+.continuous-development__progress {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1cqw 1.5cqw;
+  padding: 2cqw;
+  border-radius: 2cqw;
+  background: #eaf7f0;
+}
+
+.continuous-development__progress > div {
+  display: flex;
+  align-items: center;
+  gap: 1.3cqw;
+  grid-column: 1;
+  text-align: start;
+}
+
+.continuous-development__track {
+  grid-column: 1;
+  height: 1.5cqw;
+  border-radius: 999px;
+  background: #00a667;
+}
+
+.continuous-development__percent,
+.continuous-development__success {
+  grid-row: 1 / span 2;
+  color: #008c51;
+}
+
+.continuous-development__percent {
+  grid-column: 2;
+  font-size: 2.9cqw;
+}
+
+.continuous-development__success {
+  grid-column: 3;
+  display: grid;
+  place-items: center;
+  width: 3.3cqw;
+  height: 3.3cqw;
+  border-radius: 50%;
+  background: #008c51;
+  color: #fff;
+}
+
+.continuous-development__success svg {
+  width: 2.5cqw;
+  height: 2.5cqw;
+}
+
+.continuous-development .continuous-development__glint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.continuous-development__glint path {
+  stroke: #3777db;
+  stroke-width: 1;
+  stroke-dasharray: 8 100;
+  stroke-dashoffset: 8;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .continuous-development__glint path {
+    animation: continuous-development-glint 7s linear infinite;
+  }
+}
+
+@keyframes continuous-development-glint {
+  0%, 12% { opacity: 0; stroke-dashoffset: 8; }
+  16% { opacity: .4; }
+  34% { opacity: .4; stroke-dashoffset: -92; }
+  40%, 100% { opacity: 0; stroke-dashoffset: -100; }
+}

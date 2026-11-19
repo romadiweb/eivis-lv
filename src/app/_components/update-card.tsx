@@ -1,10 +1,8 @@
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import analyticsImage from "../../../public/eivis-analytics.png";
-import updateImage from "../../../public/eivis-update.png";
-import workflowImage from "../../../public/eivis-workflow.png";
+import { EivisOverviewAnalyticsGraphic, EivisRequestProgressGraphic } from "./feature-previews";
+import { EivisContinuousDevelopmentGraphic } from "./continuous-development-graphic";
 
 export function FeatureCard({
   title,
@@ -37,11 +35,7 @@ export function UpdateCard() {
       title="Nepārtraukti attīstībā"
       description="EIVIS regulāri tiek papildināts ar jaunām iespējām, uzlabojumiem un drošības atjauninājumiem, lai platforma augtu kopā ar jūsu vajadzībām."
     >
-      <Image
-        src={updateImage}
-        alt="EIVIS atjauninājuma ieviešana pabeigta"
-        sizes="(max-width: 600px) 85vw, (max-width: 1328px) 40vw, 480px"
-      />
+      <EivisContinuousDevelopmentGraphic />
     </FeatureCard>
   );
 }
@@ -52,11 +46,7 @@ export function AnalyticsCard() {
       title="Viss svarīgais. Vienā pārskatā."
       description="Pārraugiet sistēmas apmeklējumu, integrāciju darbību un svarīgākos rādītājus vienuviet."
     >
-      <Image
-        src={analyticsImage}
-        alt="Sistēmas apmeklējuma un integrāciju stāvokļa pārskats"
-        sizes="(max-width: 600px) 85vw, (max-width: 1328px) 40vw, 480px"
-      />
+      <EivisOverviewAnalyticsGraphic />
     </FeatureCard>
   );
 }
@@ -68,11 +58,7 @@ export function WorkflowCard() {
       description="Pieteikumi, uzdevumi un saskaņojumi vienotā darba plūsmā. Skaidri soļi, atbildīgie un izpildes statuss."
       linkLabel="Iepazīt iespējas"
     >
-      <Image
-        src={workflowImage}
-        alt="Aprīkojuma pieprasījums ar trim pabeigtiem soļiem"
-        sizes="(max-width: 600px) 58vw, (max-width: 1056px) 30vw, 322px"
-      />
+      <EivisRequestProgressGraphic />
     </FeatureCard>
   );
 }

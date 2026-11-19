@@ -5,7 +5,7 @@
 .security-feature[data-reversed] .security-feature__copy { grid-column: 2; grid-row: 1; }
 .security-feature[data-reversed] .security-feature-visual { grid-column: 1; grid-row: 1; }
 .security-feature__copy { max-width: 500px; }
-.security-feature__copy > p { color: #3777db; font-size: 13px; font-weight: 600; }
+.security-feature__copy > p { font-family: var(--font-secondary), monospace; color: #3777db; font-size: 13px; font-weight: 600; }
 .security-feature__copy h2 { max-width: 15ch; margin-top: 16px; color: #171717; font-size: clamp(30px, 4vw, 48px); font-weight: 600; line-height: 1.1; letter-spacing: -.04em; text-wrap: balance; }
 .security-feature__copy > div { max-width: 54ch; margin-top: 22px; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .security-feature-visual { display: grid; place-items: center; min-width: 0; aspect-ratio: 1.12; padding: clamp(28px, 5vw, 64px); border-radius: 16px; background: #f8f8fa; }

@@ -9,6 +9,7 @@
 }
 
 .capability-directory__eyebrow {
+  font-family: var(--font-secondary), monospace;
   color: #3777db;
   font-size: 12px;
   font-weight: 600;

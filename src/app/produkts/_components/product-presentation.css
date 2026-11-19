@@ -37,3 +37,10 @@
   padding-inline: 25px;
   font-size: 16px;
 }
+
+.product-cta > p {
+  max-width: 64ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}

@@ -17,6 +17,7 @@ type HeroVariant = "editorial" | "media" | "split" | "compact";
 const mediaHeroes = new Set([
   "produkts",
   "produkts/eivis-iespejas",
+  "produkts/lomas-un-portali",
   "resursi/ekranatteli",
 ]);
 

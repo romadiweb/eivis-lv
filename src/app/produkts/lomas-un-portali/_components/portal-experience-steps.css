@@ -1,0 +1,68 @@
+.portal-experience {
+  width: min(760px, 100%);
+  margin-inline: auto;
+  padding-block: 24px clamp(64px, 8vw, 104px);
+}
+
+.portal-experience header {
+  text-align: center;
+}
+
+.portal-experience h2 {
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+
+.portal-experience header p {
+  max-width: 70ch;
+  margin: 16px auto 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.portal-experience__steps {
+  display: grid;
+  gap: 14px;
+  width: min(620px, 100%);
+  margin: 56px auto 0;
+}
+
+.portal-experience__steps li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 36px;
+  min-height: 106px;
+  padding: 24px 32px;
+  border-radius: 32px;
+  background: #f8f8fa;
+}
+
+.portal-experience__steps svg {
+  color: var(--foreground);
+}
+
+.portal-experience__steps h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.portal-experience__steps p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@media (max-width: 520px) {
+  .portal-experience__steps li {
+    gap: 20px;
+    padding: 22px 24px;
+    border-radius: 28px;
+  }
+}
