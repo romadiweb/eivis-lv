@@ -17,6 +17,7 @@
   .site-header__dropdown,
   .site-header__dropdown-content {
     transition: none;
+    animation: none;
   }
 }
 
@@ -157,9 +158,18 @@
   transition: opacity 300ms ease;
 }
 
+.site-header__dropdown-content--incoming {
+  animation: site-header-dropdown-fade-in 160ms cubic-bezier(.16, 1, .3, 1) both;
+}
+
 .site-header[data-menu-open="true"] .site-header__dropdown-content {
   opacity: 1;
   transition-duration: 240ms;
+}
+
+@keyframes site-header-dropdown-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .site-header__dropdown-title {

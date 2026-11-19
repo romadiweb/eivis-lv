@@ -48,7 +48,7 @@
   margin: 56px auto 0;
 }
 
-.security-finisher__architecture svg {
+.security-finisher__architecture > svg {
   position: absolute;
   inset: 0;
   width: 100%;

@@ -1,4 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
+import { ImageLightbox } from "@/app/_components/image-lightbox";
 import teacherWorkspace from "../../../../../public/portal-teacher-workspace.png";
 import planningWorkspace from "../../../../../public/portal-planning-workspace.png";
 import studentBackground from "../../../../../public/portal-student-bg.png";
@@ -35,7 +36,9 @@ function PortalBrowserMockup({ screenshot, label }: { screenshot: string | Stati
     <div className="portal-showcase__browser">
       <div className="portal-showcase__bar" aria-hidden="true"><i /><i /><i /></div>
       {screenshot ? (
-        <Image src={screenshot} alt={label} sizes="(max-width: 680px) 75vw, 420px" />
+        <ImageLightbox src={screenshot} alt={label}>
+          <Image src={screenshot} alt={label} sizes="(max-width: 680px) 75vw, 420px" />
+        </ImageLightbox>
       ) : (
         <div className="portal-showcase__placeholder">Vieta darba vides attēlam</div>
       )}

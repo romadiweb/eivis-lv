@@ -93,6 +93,11 @@ export function SiteHeader() {
     cancelMenuClose();
     setActiveTitle("");
   };
+  const activateDesktopMenu = (title: string) => {
+    cancelMenuClose();
+    if (title === activeTitle) return;
+    setActiveTitle(title);
+  };
   const activeGroup =
     dropdownGroups.find((group) => group.title === activeTitle) ?? dropdownGroups[0];
   const isMenuOpen = Boolean(activeTitle && activeGroup);
@@ -139,7 +144,7 @@ export function SiteHeader() {
               onFocus={() => {
                 cancelMenuClose();
                 if (group.items?.length) {
-                  setActiveTitle(group.title);
+                  activateDesktopMenu(group.title);
                   return;
                 }
 
@@ -148,7 +153,7 @@ export function SiteHeader() {
               onMouseEnter={() => {
                 cancelMenuClose();
                 if (group.items?.length) {
-                  setActiveTitle(group.title);
+                  activateDesktopMenu(group.title);
                   return;
                 }
 
@@ -233,20 +238,17 @@ export function SiteHeader() {
         className="site-header__dropdown"
         onFocus={() => {
           cancelMenuClose();
-          if (activeGroup) {
-            setActiveTitle(activeGroup.title);
-          }
         }}
         onMouseEnter={() => {
           cancelMenuClose();
-          if (activeGroup) {
-            setActiveTitle(activeGroup.title);
-          }
         }}
         role="menu"
       >
         <div className="site-header__dropdown-inner">
-          <div className="site-header__dropdown-content" key={activeGroup?.title}>
+          <div
+            className="site-header__dropdown-content site-header__dropdown-content--incoming"
+            key={activeGroup?.title}
+          >
             <p className="site-header__dropdown-title">{activeGroup?.title}</p>
             <div className="site-header__dropdown-grid">
               {activeGroup?.items?.map((item) => (
