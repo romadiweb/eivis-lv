@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import type { CSSProperties } from "react";
 import "./solution-editorial-hero.css";
 
 type SolutionEditorialHeroProps = {
@@ -9,6 +10,7 @@ type SolutionEditorialHeroProps = {
   description: string;
   image: StaticImageData;
   imageAlt: string;
+  cropTopThird?: boolean;
 };
 
 export function SolutionEditorialHero({
@@ -17,6 +19,7 @@ export function SolutionEditorialHero({
   description,
   image,
   imageAlt,
+  cropTopThird = false,
 }: SolutionEditorialHeroProps) {
   return (
     <section className="solution-editorial-hero" aria-labelledby="solution-editorial-hero-title">
@@ -35,7 +38,11 @@ export function SolutionEditorialHero({
         </div>
       </div>
 
-      <div className="solution-editorial-hero__visual">
+      <div
+        className="solution-editorial-hero__visual"
+        data-crop-top-third={cropTopThird || undefined}
+        style={cropTopThird ? { "--hero-cropped-ratio": `${image.width} / ${image.height * 2 / 3}` } as CSSProperties : undefined}
+      >
         <Image
           src={image}
           alt={imageAlt}

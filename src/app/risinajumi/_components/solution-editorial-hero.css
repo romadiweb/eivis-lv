@@ -109,3 +109,20 @@
     translate: 0 -70px;
   }
 }
+
+.solution-editorial-hero__visual[data-crop-top-third] {
+  position: relative;
+  aspect-ratio: var(--hero-cropped-ratio);
+  height: auto;
+  overflow: hidden;
+}
+
+.solution-editorial-hero__visual[data-crop-top-third] img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+  translate: none;
+}
